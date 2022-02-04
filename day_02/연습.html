@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="로그인화면">
+        <input type="text" placeholder="아이디" />
+        <br><input type="password" placeholder="비밀번호" />
+        <br><input type="submit">
+    </form>
+    <p>게임추천해주세요</p>
+    <br><label for="game">격투게임 추천</label>
+    <input id="game" type="text" list="game-list" />
+    <datalist id="game-list">
+        <option value="철권"></option>
+        <option value="DOA"></option>
+        <option value="소울칼리버"></option>
+        <option value="나루티밋스톰"></option>
+        <option value="귀멸의칼날 히노카미 혈풍담"></option>
+    </datalist>
+    <br><label for="game2">오픈월드게임 추천</label>
+    <input id="game2" type="text" list="game-list2" />
+    <datalist id="game-list2">
+        <option value="메탈기어솔리드5 팬텀페인"></option>
+        <option value="어쌔신크리드 오디세이"></option>
+        <option value="저스트코즈4"></option>
+        <option value="데스스트렌딩"></option>
+        <option value="위쳐3"></option>
+    </datalist>
+    <br><label for="game3">소울류게임 추천</label>
+    <input id="game3" type="text" list="game-list3" />
+    <datalist id="game-list3">
+        <option value="블러드본"></option>
+        <option value="다크소울"></option>
+        <option value="인왕"></option>
+        <option value="세키로"></option>
+        <option value="램넌트"></option>
+    </datalist>
+    <details>
+        <summary>어려운걸 좋아한다</summary>
+        <span>다크소울</span>
+        <br><span>세키로</span>
+        <br><span>인왕</span>
+    </details>
+    <details>
+        <summary>모험을 하고싶다</summary>
+        <span>위쳐3</span>
+        <br><span>젤다의전설 야생의숨결</span>
+        <br><span>엘더스크롤 스카이림</span>
+    </details>
+    <details>
+        <summary>암살을좋아한다</summary>
+        <span>히트맨</span>
+        <br><span>디스아너드</span>
+        <br><span>스나이퍼 엘리트</span>
+    </details>
+    <details>
+        <summary>전략을 좋아한다</summary>
+        <span>쉐도우 택틱스</span>
+        <br><span>아이어하베스트</span>
+    </details>
+    <details>
+        <summary>디즈니류게임</summary>
+        <span>니노쿠니</span>
+        <br><span>킹덤하츠</span>
+    </details>
+    <details>
+        <summary>운빨</summary>
+        <span>다키스트던전</span>
+    </details>
+    <details>
+        <summary>피튀기는 액션</summary>
+        <span>둠 이터널</span>
+    </details>
+    <details>
+        <summary>한편의 영화같은</summary>
+        <span>용과같이</span>
+        <br><span>배트맨 아캄시리즈</span>
+    </details>
+    <br><p>로딩중</p>
+    <progress value="80" min="0" max="100"></progress>
+</body>
+</html>

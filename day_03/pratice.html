@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            position: relative;
+            left: 50%;
+        }
+        th{
+            font-size: 2rem;
+            font-weight: 100;
+        }
+        td{
+            font-size: 1em;
+        }
+        .a{
+            position: relative;
+            left: 50%;
+        }
+        .aa{
+            position: relative;
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>월요일</th>
+                <th>화요일</th>
+                <th>수요일</th>
+                <th>목요일</th>
+                <th>금요일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">축구</td>
+                <td>수영</td>
+                <td>야구</td>
+                <td>배구</td>
+                <td>농구</td>
+            </tr>
+            <tr>
+                <td>육상</td>
+                <td colspan="2">미식축구</td>
+                <td>골프</td>
+            </tr>
+        </tbody>
+    </table>
+    <details>
+        <summary>소울라이크</summary>
+        <span>
+            <a href="https://store.steampowered.com/app/570940/DARK_SOULS_REMASTERED/">다크소울</a>
+        </span>
+        <br><span>
+            <a href="https://store.steampowered.com/app/335300/DARK_SOULS_II_Scholar_of_the_First_Sin/">다크소울2</a>
+        </span>
+        <br><span>
+            <a href="https://store.steampowered.com/app/374320/DARK_SOULS_III/">다크소울3</a>
+        </span>
+    </details>
+    <label for="game">게임추천</label>
+    <input id="game" type="text" list="game-list" />
+    <datalist id="game-list">
+    <option value="위쳐3"></option>
+    <option value="다크소울3"></option>
+    <option value="어쌔신크리드3"></option>
+    </datalist>
+    <div class="a">게임출시</div>
+    <div class="aa">게임출시</div>
+    <form action="로그인">
+        <input type="text" placeholder="아이디" />
+        <input type="password" placeholder="비밀번호" />
+        <input type="submit">
+    </form>
+
+</body>
+</html>

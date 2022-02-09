@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box-form{
+            width: 650px;
+            height: auto;
+            margin: 5% auto 0;
+            padding: 15px;
+            border: 5px solid gold;
+            text-align : center;
+        }
+        .box-form h2{
+            width: 90%;
+            padding: 10px;
+            color: antiquewhite;
+        }
+        .box-form select{
+            width: 85%;
+            padding: 10px;
+            margin: 5px auto 0;
+            
+        }
+        .box-form img{
+            width: 85%;
+            height: 85%;
+            padding: 10px;
+        }
+        .box-form input{
+            width: 85%;
+            margin: 5px auto 0;
+            padding: 10px;
+           
+        }
+        .box-form input[type=checkbox]{
+            width: 15px;
+            margin: 5px auto 0;
+            padding: 10px;
+            color: azure;
+        }
+        .box-form button{
+            width: 55px;
+            height: 30px;
+        }
+        .box-form .true{
+            width: 85%;
+            margin: 5px auto 0;
+            padding: 10px;
+            
+        }
+        .box-form .flase{
+            width: 85%;
+            margin: 5px auto 0;
+            padding: 10px;
+            
+        }
+        .box-form label{
+            color: antiquewhite;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            background-image: url(dark2.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        
+        
+    </style>
+    <script>
+        function success(){
+            alert('구매완료')
+        }
+        function fail(){
+            alert('구매취소')
+        }
+        function before(){
+            document.getElementById("img").src = "dark3.jpg"
+        }
+        function next(){
+            document.getElementById("img").src = "dark.jpg"
+        }
+        function autohypentel(str){
+            
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <div class="box-form">
+                <h2>다크소울 Colletion</h2>
+                <select name="" id="">
+                    <option value="">--제품을 선택하시오--</option>
+                    <option value="다크소울">다크소울</option>
+                    <option value="다크소울2">다크소울2</option>
+                    <option value="다크소울3">다크소울3</option>
+                </select>
+                <div>
+                    <img id="img" src="다크소울3.jpg" alt="">
+                    <br><button calss="before" onclick="before()">이전</button>
+                    <button calss="next" onclick="next()">다음</button>
+                </div>
+                <br><input type="number" placeholder="수량" />
+                <br><input type="text" placeholder="이름 입력" />
+                <br><input type="password" placeholder="비밀번호 입력">
+                <br><input type="checkbox" id="광고수신여부" checked />
+                <label for="광고수신여부">광고수신여부</label>
+                <br><input type="email" placeholder="이메일 입력" />
+                <br><button class="true" onclick="success()">구매완료</button>
+                <br><button class="flase" onclick="fail()">구매취소</button>
+            </div>
+        </div>
+        </div>
+</body>
+</html>

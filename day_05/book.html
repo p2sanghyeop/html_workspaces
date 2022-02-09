@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .book-form{
+            width: 350px;
+            height: auto;
+            border: 3px solid #E57228 ;
+            margin: 10% auto 0;
+            padding: 10px;
+            
+        }
+        .book-form input{
+            width: 100%;
+            height: 30px;
+            margin: 10px 10px 10px 5px;
+            border-radius: 10px;
+        }
+        .book-form button{
+            width: 100%;
+            height: 30px;
+            margin: 10px 10px 10px 5px;
+            border-color: #45B173 ;
+        }
+        .book-form .true{
+            background-color: #414D7E;
+            color: azure;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .book-form .flase{
+            background-color: #932D37;
+            color: beige;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function dosuccess(){
+            alert('예약완료')
+        }
+        function dofail(){
+            alert('예약취소')
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="book-form">
+            <input type="text" placeholder="아이디" />
+            <br><button class="true" onclick="dosuccess()">예약완료</button>
+            <br><button class="flase" onclick="dofail()">예약취소</button>
+        </div>
+    </div>
+</body>
+</html>

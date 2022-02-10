@@ -11,18 +11,28 @@
             margin: 0;
             box-sizing: border-box;
         }
+        @font-face {
+    font-family: 'SangSangRock';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
         .box-form{
-            width: 650px;
+            width: 900px;
             height: auto;
             margin: 5% auto 0;
             padding: 15px;
-            border: 5px solid gold;
             text-align : center;
         }
         .box-form h2{
             width: 90%;
             padding: 10px;
-            color: antiquewhite;
+            position: relative;
+            left: 50px;
+            font-size: 50px;
+            color: red   ;
+            font-weight: 100px;
+            font-family: 'SangSangRock';
         }
         .box-form select{
             width: 85%;
@@ -31,10 +41,11 @@
             
         }
         .box-form img{
-            width: 85%;
-            height: 85%;
+            width: 500px;
+            height: 400px;
             padding: 10px;
         }
+    
         .box-form input{
             width: 85%;
             margin: 5px auto 0;
@@ -42,23 +53,43 @@
            
         }
         .box-form input[type=checkbox]{
-            width: 15px;
-            margin: 5px auto 0;
-            padding: 10px;
-            color: azure;
+          display: none;
         }
-        .box-form button{
+        .box-form input[type=checkbox] + label span{
+        display:inline-block;
+        width:10px;
+        height:10px;
+        margin:-2px 10px 0 0;
+        background:url(check.png);
+        vertical-align: middle;
+        cursor:pointer;
+        }
+        .box-form input[type=checkbox]:checked + label span{
+        background:url(check.png);
+        }
+        
+        .box-form .before{
             width: 55px;
             height: 30px;
+            position: relative;
+            left: 145px;
+            text-align: center;
+        }
+        .box-form .next{
+            width: 55px;
+            height: 30px;
+            position: relative;
+            left: 165px;
+            text-align: center;
         }
         .box-form .true{
-            width: 85%;
+            width: 42%;
             margin: 5px auto 0;
             padding: 10px;
             
         }
         .box-form .flase{
-            width: 85%;
+            width: 42%;
             margin: 5px auto 0;
             padding: 10px;
             
@@ -69,7 +100,7 @@
         body{
             width: 100%;
             height: 100vh;
-            background-image: url(dark2.jpg);
+            background-image: url(scholar.jpg);
             background-position: center;
             background-size: cover;
         }
@@ -83,44 +114,54 @@
         function fail(){
             alert('구매취소')
         }
-        function before(){
-            document.getElementById("img").src = "dark3.jpg"
-        }
-        function next(){
-            document.getElementById("img").src = "dark.jpg"
-        }
-        function autohypentel(str){
-            
+        
+        var num = 1;
+        function chagePic(idx){
+            if(idx) {
+                if(num ==5) return;
+                ++num
+            }
+            else{
+                if(num ==1) return;
+                --num
+            }
+            var imgTag = document . getElementById("dark");
+            imgTag.setAttribute("src", "dark0"+num+".jpg")
         }
 
     </script>
 </head>
 <body>
     <div class="container">
-        <div class="background">
             <div class="box-form">
-                <h2>다크소울 Colletion</h2>
+                <h2>Dark Soul Colletion</h2>
                 <select name="" id="">
                     <option value="">--제품을 선택하시오--</option>
+                    <option value="데몬즈소울">데몬즈소울</option>
                     <option value="다크소울">다크소울</option>
                     <option value="다크소울2">다크소울2</option>
                     <option value="다크소울3">다크소울3</option>
                 </select>
+                <div class=""></div>
                 <div>
-                    <img id="img" src="다크소울3.jpg" alt="">
-                    <br><button calss="before" onclick="before()">이전</button>
-                    <button calss="next" onclick="next()">다음</button>
+                    <iframe width="300" height="300" 
+                    src="https://www.youtube.com/embed/zgdooKmEwBA" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                    <img id="dark" src="dark01.jpg" alt="">
+                    <br><button class="before" onclick="chagePic(0)">이전</button>
+                    <button class="next" onclick="chagePic(1)">다음</button>
                 </div>
                 <br><input type="number" placeholder="수량" />
                 <br><input type="text" placeholder="이름 입력" />
                 <br><input type="password" placeholder="비밀번호 입력">
-                <br><input type="checkbox" id="광고수신여부" checked />
-                <label for="광고수신여부">광고수신여부</label>
+                <br><input type="checkbox" id="광고수신여부" />
+                <label for="광고수신여부"><span>광고수신여부</span></label>
                 <br><input type="email" placeholder="이메일 입력" />
-                <br><button class="true" onclick="success()">구매완료</button>
-                <br><button class="flase" onclick="fail()">구매취소</button>
+                <button class="true" onclick="success()">구매완료</button>
+                <button class="flase" onclick="fail()">구매취소</button>
             </div>
-        </div>
         </div>
 </body>
 </html>

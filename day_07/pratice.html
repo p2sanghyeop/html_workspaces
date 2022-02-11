@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        header{
+            display: flex;
+            justify-content: space-around;
+            background-color: aquamarine;
+            padding: 10px 15px;
+            align-items: center;
+        }
+        .logo p{
+            font-size: 24px;
+        }
+        .menu{
+            display: flex;
+            list-style: none;
+        }
+        .menu li{
+            padding: 10px 15px;
+        }
+        .menu li:hover{
+            background-color: antiquewhite;
+            border-radius: 10px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .bod{
+            background-color: blueviolet;
+            height: 100vh;
+        }
+        footer{
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 15px;
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="home"><p>home</p></div>
+            <ul class="kind">
+                <li><a href="">Dark Soul</a></li>
+                <li><a href="">Dark Soul2</a></li>
+                <li><a href="">Dark Soul3</a></li>
+            </ul>
+            <div class="gallery"><p>gallery</p></div>
+        </header>
+        <div class="bod">
+            <p>중간영역입니다</p>
+        </div>
+        <footer>
+            <div class="company">
+                <p>제작사</p>
+                <br><p>From Software</p>
+            </div>
+            <div class="distribution">
+                <p>배급</p>
+                <br><p>BANDAI NAMCO Entertainment</p>
+            </div>
+            <div class="plan">
+                <p>기획</p>
+                <br><p>SEGA</p>
+            </div>
+        </footer>
+    </div>    
+</body>
+</html>

@@ -6,217 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Document</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        @font-face {
-            font-family: 'SangSangRock';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        .box-form{
-            width: 900px;
-            height: auto;
-            margin: 5% auto 0;
-            padding: 15px;
-            text-align : center;
-        }
-        .box-form h2{
-            width: 90%;
-            padding: 10px;
-            position: relative;
-            left: 50px;
-            font-size: 50px;
-            color: red   ;
-            font-weight: 100px;
-            font-family: 'SangSangRock';
-        }
-        .box-form select{
-            width: 85%;
-            padding: 10px;
-            margin: 5px auto 0;
-            
-        }
-        .box-form img{
-            width: 500px;
-            height: 400px;
-            padding: 10px;
-        }
-    
-        .box-form input{
-            width: 85%;
-            margin: 5px auto 0;
-            padding: 10px; 
-        }
-        
-        .box-form input[type=checkbox]{
-          width: 15px;
-          height: 15px;
-            cursor: pointer;
-        }
-        .box-form .before{
-            width: 55px;
-            height: 30px;
-            position: relative;
-            left: 145px;
-            text-align: center;
-        }
-        .box-form .next{
-            width: 55px;
-            height: 30px;
-            position: relative;
-            left: 165px;
-            text-align: center;
-        }
-        .box-form .true{
-            width: 42%;
-            margin: 5px auto 0;
-            padding: 10px;
-            
-        }
-        .box-form .flase{
-            width: 42%;
-            margin: 5px auto 0;
-            padding: 10px;
-            
-        }
-        .box-form label{
-            color: antiquewhite;
-        }
-        body{
-            width: 100%;
-            height: 100vh;
-            background-image: url(scholar.jpg);
-            background-position: center;
-            background-size: cover;
-        }
-        header{
-            display: flex;
-            justify-content: space-around;
-            position: fixed;
-            bottom: 550px;
-            right: 400px;
-            padding: 10px 15px;
-            flex-wrap: wrap;
-            align-items: center;
-            cursor: pointer;
-        }
-        .home p{
-            font-size: 24px;
-            color: aliceblue;
-        }
-        .kind{
-            display: flex;
-            list-style: none;
-            color: aliceblue;
-        }
-        .kind li{
-            padding: 10px 15px;
-        }
-        .kind li:hover{
-            background-color: red;
-            border-radius: 10px;
-        }
-        a{
-            text-decoration: none;
-        }
-        .gallery{
-            color: aliceblue;
-        }
-        footer{
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 15px;
-            flex-wrap: wrap;
-            color: aliceblue;
-            align-items: center;
-            text-align: center;
-        }
-        a{
-            text-decoration: none;
-            color: aliceblue;
-            padding: 15px;
-        }
-        .navbar{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navbar_home{
-            font-size: 25px;
-        }
-        .navbar_kind{
-            display: flex;
-            list-style: none;
-            padding-left: 0;
-        }
-        .navbar_kind li{
-            padding: 20px 15px;
-            font-size: 25px;
-        }
-        .navbar_kind li:hover{
-            background-color: red;
-            border-radius: 15px;
-        }
-        .navbar_gallery{
-            display: flex;
-            padding: 15px;
-            font-size: 25px;
-        }
-        @media screen and (max-width: 800px){
-            .navbar{
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px;
-            }
-            .navbar_kind{
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-            .navbar_kind li{
-                width: 100%;
-                text-align: center;
-            }
-            .navbar_gallery{
-                justify-content: center;
-                width: 100%;
-            }
-        }
-    </style>
-    <script>
-        function success(){
-            alert('구매완료')
-        }
-        function fail(){
-            alert('구매취소')
-        }
-        
-        var num = 1;
-        function chagePic(idx){
-            if(idx) {
-                if(num ==5) return;
-                ++num
-            }
-            else{
-                if(num ==1) return;
-                --num
-            }
-            var imgTag = document . getElementById("dark");
-            imgTag.setAttribute("src", "dark0"+num+".jpg")
-        }
-
-    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7f3a427fdf.js" 
+    crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </head>
 <body>
     <div class="container">
         <nav class="navbar">
             <div class="navbar_home">
-                <p><a href="">HOME</a></p>
+                <i class="fa-solid fa-jedi"></i>
+                <a href="">HOME</a>
             </div>
             <ul class="navbar_kind">
                 <li><a href="">Dark Soul</a></li>
@@ -224,8 +24,11 @@
                 <li><a href="">Dark Soul3</a></li>
             </ul>
             <div class="navbar_gallery">
-                <P><a href="">Gallery</a></P>
+                <a href="">Gallery</a>
             </div>
+            <a href="#" class="navbar_toggle">
+                <i class="fa-solid fa-bars"></i>
+            </a>
         </nav>
         <header>
             <div class="home"><p>HOME</p></div>

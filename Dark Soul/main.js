@@ -19,10 +19,23 @@ function chagePic(idx){
     imgTag.setAttribute("src", "dark0"+num+".jpg")
 }
 
-const toogle = document.querySelector('navbar_toggle');
-const kind = document.querySelector('navbar_kind');
-const gallery = document.querySelector('navbar_gallery');
-toogle.addEventListener('click', () => {
-    kind.classList.toggle('active');
-    gallery.classList.toggle('active');
-})
+window.addEventListener("wheel", function(e){
+    e.preventDefault();
+}, {passive : false});
+
+var $html = $("html");
+var page = 1;
+mhtml.animate({scrollTop:0},10);
+
+$(window).on("wheel", function(e){
+    if(mhtml.is(":animated")) return;
+if(e.originalEvent.deltaY > 0){
+    if(page == 4) return;
+    page++;
+}
+else if(e.originalEvent.deltaY >0){
+    if(page == 1) return;
+    page--;
+}
+var posTop = (page-1) * $(window).height();
+$html.animate({scrollTop : posTop});

@@ -114,6 +114,7 @@ header{
 }
 a{
     text-decoration: none;
+    color: aliceblue;
 }
 .gallery{
     color: aliceblue;
@@ -127,67 +128,35 @@ footer{
     align-items: center;
     text-align: center;
 }
-a{
-    text-decoration: none;
-    color: aliceblue;
-    padding: 15px;
-}
 .navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.navbar_home{
-    font-size: 25px;
-}
-.navbar_kind{
-    display: flex;
-    list-style: none;
-    padding-left: 0;
+    display: block;
+    position: fixed;
+    top: 120px;
+    right: 40px;
+    height: 100vh;
 }
 .navbar_kind li{
-    padding: 20px 15px;
+    list-style: none;
     font-size: 25px;
+    padding: 8px;
 }
 .navbar_kind li:hover{
     background-color: red;
-    border-radius: 15px;
+    border-radius: 10px;
 }
-.navbar_gallery{
-    display: flex;
-    padding: 15px;
-    font-size: 25px;
+#section1 {
+    background-color: aliceblue;
 }
-.navbar_toggle{
-    position: absolute;
-    right: 30px;
+
+#section2 {
+    background-color: lightpink;
 }
-@media screen and (max-width: 700px){
-    .navbar{
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-    .navbar_kind{
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    .navbar_kind li{
-        width: 100%;
-        text-align: center;
-    }
-    .navbar_gallery{
-        display: none;
-        justify-content: center;
-        width: 100%;
-    }
-    .navbar_toggle{
-        display: block;
-    }
-    .navbar_kind.active,
-    .navbar_gallery.active{
-        display: flex;
-    }
+
+#section3 {
+    background-color: coral;
 }
+
+#section4 {
+    background-color: aqua;
+}
+

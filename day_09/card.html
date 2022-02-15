@@ -6,70 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
+        *{
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
         .container{
-            background-color: rgb(238, 224, 195);
-            margin: 50px auto 0;
+            margin: 10% auto 0;
         }
         .card{
-            position: relative; left: 400px;
+            position: relative;
             display: inline-block;
+            left: 200px;
             margin: 15px;
-            border-radius: 5px;
+            border-radius: 10px;
             height: 400px;
-            width: 260px;
+            width: 300px;
             padding: auto;
             overflow: hidden;
-            box-shadow: 0 25px 35px gray;
+            box-shadow: 0 15px 20px slategray;
             transform: scale(1);
-            transition: 1s;
+            transition: 2s;
         }
         .card img{
-            width: 260px;
-            height: 260px;
+            width: 300px;
+            height: 250px;
         }
         .card:hover{
             cursor: pointer;
-            transform: scale(1.25);
-            background-color: aqua;
+            transform: scale(1.5);
+            background-color: blueviolet;
         }
-        .text-wrap{
+        .text{
             padding: 15px;
             text-align: center;
-        }
-        .text-wrap h1{
-            font-size: 24px;
-        }
-        .text-wrap p{
-            line-height: 2;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card">
-            <img src="파이리.gif" alt="" />
-            <div class="text-wrap">
-                <h1>파이리</h1>
-                <p>용새끼 포켓몬. 속성 불</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="꼬북이.jpg" alt="" />
-            <div class="text-wrap">
+            <img src="꼬북이.jpg" alt="">
+            <div class="text">
                 <h1>꼬북이</h1>
-                <p>거북새끼 포켓몬. 속성 물</p>
+                <p>거북이</p>
             </div>
         </div>
         <div class="card">
-            <img src="이상해씨.jpg" alt="" />
-            <div class="text-wrap">
+            <img src="파이리.gif" alt="">
+            <div class="text">
+                <h1>파이리</h1>
+                <p>도룡뇽</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="이상해씨.jpg" alt="">
+            <div class="text">
                 <h1>이상해씨</h1>
-                <p>씨앗포켓몬. 속성 풀/독</p>
+                <p>파충류</p>
             </div>
         </div>
     </div>

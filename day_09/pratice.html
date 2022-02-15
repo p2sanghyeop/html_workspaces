@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            height: 500px;
+            background-image: linear-gradient(rgba(24, 48, 90, 0.8),rgba(24, 48, 90, 0.8)),
+            url(blood.jpg) ;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        .nav{
+            display: flex;
+            padding: 5px;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            top: 30px;
+        }
+        .nav-link ul {
+            display: flex;
+            position: relative;
+            right: 50px;
+        }
+        .nav-link ul li{
+            list-style: none;
+            padding: 8px;
+        }
+        .nav-link ul li:hover{
+            transition: 2s;
+            background-color: lightskyblue;
+            border-radius: 15px;
+        }
+        .text-box {
+            width: 80%;
+            position: absolute;
+            left: 12%;
+            top: 30%;
+            text-align: center;
+            padding: 15px;
+        }
+        .text-box h2{
+            font-size: 30px;
+        }
+        .text-box p{
+            font-size: 20px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .text-box a{
+            font-size: 45px;
+
+        }
+        .text-box a:hover{
+            border-radius: 15px;
+            background-color: lightseagreen;
+            transition: 3s;
+        }
+        a{
+            text-decoration: none;
+            font-size: 30px;
+            color: aliceblue;
+        }
+        .section{
+            position: relative; left: 300px;
+            display: inline-block;
+            margin: 30px;
+            border-radius: 5px;
+            height: 400px;
+            width: 260px;
+            padding: auto;
+            overflow: hidden;
+            box-shadow: 0 25px 35px steelblue;
+            transform: scale(1);
+            transition: 2s;
+        }
+        .section img{
+            width: 260px;
+            height: 260px;
+        }
+        .section:hover{
+            cursor: pointer;
+            transform: scale(1.25);
+            background-color: crimson;
+        }
+        .text-wrap{
+            padding: 15px;
+            text-align: center;
+        }
+        table{
+            margin: auto;
+            box-shadow: 0 7px 12px navy;
+        }
+        th {
+        padding: 1rem 2rem;
+        letter-spacing: 0.4rem;
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    td {
+        padding: 1rem 2rem;
+        text-align: center;
+    }
+        
+       
+        
+    </style>
+    <script src="https://kit.fontawesome.com/7f3a427fdf.js" crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+
+            <div class="nav">   
+                <div class="img">
+                    <i class="fa-brands fa-playstation" style="font-size: 50px; 
+                    position: relative; left: 30px;"></i>
+                </div>
+                <div class="nav-link">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Restart</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="text-box">
+                <h2>정보를 알려드립니다</h2>
+                <p>공략을 알려드립니다<br>
+                    우리서로 좋은 정보를 공유합시다</p>
+                    <a href="#">공략</a>
+             </div>
+        </header>
+        <br>
+        <table >
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>타입</th>
+                    <th>약점속성</th>
+                    <th>약점타격형태</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>무서운야수</td>
+                    <td>야수</td>
+                    <td>신비,화염,독</td>
+                    <td>없음</td>
+                </tr>
+                <tr>
+                    <td>아미그딜라</td>
+                    <td>없음</td>
+                    <td>신비,화염,번개</td>
+                    <td>없음</td>
+                </tr>
+                <tr>
+                    <td>피에 굶주린 야수</td>
+                    <td>야수</td>
+                    <td>화염</td>
+                    <td>없음</td>
+                </tr>
+            </tbody>
+        </table>
+            <footer>
+                <div class="section">
+                    <a href="https://bbs.ruliweb.com/family/4892/board/182048/read/8852343?"> 
+                    <img src="blood1.jpg" alt=""></a>
+                        <div class="text-wrap">
+                            <h1>블러드본 공략1</h1>
+                            <p>공략영상입니다</p>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <a href="https://bbs.ruliweb.com/family/4892/board/182048/read/8674170?"> 
+                        <img src="blood2.jpg" alt=""></a>
+                            <div class="text-wrap">
+                                <h1>블러드본 공략2</h1>
+                                <p>두번째 공략영상입니다</p>
+                            </div>
+                        </div>
+            </footer>
+            
+                        
+        </body>
+        </html>

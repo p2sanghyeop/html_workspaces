@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
     <style>
-        html {
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    html {
     overflow: hidden;
-}
+    }
 
 html, body {
     display: block;
@@ -28,18 +35,59 @@ html, body {
 #section1 {
     background-color: aliceblue;
 }
-
+.nav{
+    position: fixed;
+    right: 45px;
+    top: 50%;
+}
+.nav ul li{
+    list-style: none;
+}
+.nav ul li a{
+    text-decoration: none;
+}
 #section2 {
-    background-image: url(dead.jpg);
+    background-image: linear-gradient(rgba(42, 37, 65, 0.8),rgba(42, 37, 65, 0.8)), 
+    url(zero.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 #section3 {
-    background-image: url(red.jpg);
+    background-image: url(zero1.jpg);
 }
+.card{
+            position: relative;
+            display: inline-block;
+            left: 400px;
+            top: 100px;
+            margin: 15px;
+            border-radius: 10px;
+            height: 400px;
+            width: 200px;
+            padding: auto;
+            overflow: hidden;
+            box-shadow: 0 15px 20px slategray;
+            transform: scale(1);
+            transition: 2s;
+        }
+        .card img{
+            width: 200px;
+            height: 300px;
+        }
+        .card:hover{
+            cursor: pointer;
+            transform: scale(1.25);
+            background-color: maroon;
+        }
+        .text{
+            padding: 15px;
+            text-align: center;
+        }
+        .nav{
+            position: fixed;
+        }
 
-#section4 {
-    background-color: aqua;
-}
     </style>
     <script>
         window.addEventListener("wheel", function(e){
@@ -63,14 +111,47 @@ $(window).on("wheel", function(e) {
     var posTop =(page-1) * $(window).height();
     mHtml.animate({scrollTop : posTop});
 })
+
+$(document).ready(function(){
+
+    $('#btn1').click(function(){
+
+        var offset = $('#div1').offset(); 
+
+        $('html').animate({scrollTop : offset.top}, 400);
+
+    });
+
+});
+
+
+
+
+
     </script>
 </head>
 <body>
         <div class="section" id="section1">
-            
-        </div
-        ><div class="section" id="section2"></div
-        ><div class="section" id="section3"></div
-        ><div class="section" id="section4"></div>
+            <div class="nav">
+                <button id="btn1">section1로 이동</button>
+
+                <div id="section1">section1</div>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="card">
+                <img src="kiru.jpg" alt="">
+                <div class="text">
+                    <h2>키류</h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="mazima.jpg" alt="">
+                <div class="text">
+                    <h2>마지마</h2>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section3"></div>
 </body>
 </html>

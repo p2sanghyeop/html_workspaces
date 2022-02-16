@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+html, body{overflow-y:hidden}
+ul, ol{list-style:none}
+.header{position:fixed;z-index:10;top:30%; left: 80%; width:100%}
+.header ul:after{content:"";display:block;clear:both}
+.header ul li{box-sizing:border-box;width:15%}
+.header ul li:first-child{border-left:none}
+.header ul li a{
+    margin: 15px;
+    display:block;height:60px;text-align:center;
+    line-height:60px;font-size:25px;
+    text-decoration:none;color:aliceblue}
+.header ul li.on a{
+    border-radius: 15px;
+    background-color:snow; color:crimson;
+}
+.content div{position:relative}
+.content div p{position:absolute;top:50%;margin-top:-40px;
+    text-align:center;width:100%;font-size:80px;font-weight:bold;color:#fff}
+.content .cnt01{background-color:#cc6666}
+.content .cnt02{
+    background-image: linear-gradient(rgba(42, 37, 65, 0.8),rgba(42, 37, 65, 0.8)),
+    url(zero.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.content .cnt03{
+    background-image: linear-gradient(rgba(22, 21, 22, 0.8),rgba(22, 21, 22, 0.8)),
+    url(zero1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.content .cnt03 img{
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    margin: 8% auto 0;
+    opacity: 0.8;
+    position: relative;
+    left: 25%;
+}
+.content .cnt03 button{
+    position: relative;
+    left: 42%;
+}
+.card{
+            position: relative;
+            display: inline-block;
+            left: 400px;
+            top: 100px;
+            margin: 15px;
+            border-radius: 10px;
+            height: 400px;
+            width: 200px;
+            padding: auto;
+            overflow: hidden;
+            box-shadow: 0 15px 20px slategray;
+            transform: scale(1);
+            transition: 2s;
+        }
+        .card img{
+            width: 200px;
+            height: 300px;
+        }
+        .card:hover{
+            cursor: pointer;
+            transform: scale(1.25);
+            background-color: thistle;
+        }
+        .text{
+            padding: 15px;
+            text-align: center;
+        }
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        var scroll = function(){
+    
+    var $nav = null,
+        $cnt = null,
+        moveCnt = null,
+        moveIndex = 0,
+        moveCntTop = 0,
+        winH = 0,
+        time = false; // 새로 만든 변수
+
+    $(document).ready(function(){
+        init();
+        initEvent();
+    });
+    
+    var init = function(){
+        $cnt = $(".content");
+        $nav = $(".header a");
+    };
+    
+    var initEvent = function(){
+        $("html ,body").scrollTop(0);
+        winResize();
+        $(window).resize(function(){
+            winResize();
+        });
+        $nav.on("click", function(){
+            moveIndex = $(this).parent("li").index();
+            moving(moveIndex);
+            return false;
+        });
+        $cnt.on("mousewheel", function(e){
+            if(time === false){ // time 변수가 펄스일때만 휠 이벤트 실행
+              wheel(e);
+            }
+        });
+    };
+        
+    var winResize = function(){
+        winH = $(window).height();
+        $cnt.children("div").height(winH);
+        $("html ,body").scrollTop(moveIndex.scrollTop);
+    };
+    
+    var wheel = function(e){
+        if(e.originalEvent.wheelDelta < 0){
+            if(moveIndex < 2){
+                moveIndex += 1;
+                moving(moveIndex);
+            };
+        }else{
+            if(moveIndex > 0){
+                moveIndex -= 1;
+                moving(moveIndex);
+            };
+        };
+    };
+    
+    var moving = function(index){
+        time = true // 휠 이벤트가 실행 동시에 true로 변경
+        moveCnt = $cnt.children("div").eq(index);
+        moveCntTop = moveCnt.offset().top;
+        $("html ,body").stop().animate({
+            scrollTop: moveCntTop
+        }, 1000, function(){
+          time = false; // 휠 이벤트가 끝나면 false로 변경
+        });
+        $nav.parent("li").eq(index).addClass("on").siblings().removeClass("on");
+    };
+    
+};
+
+scroll();
+
+var num = 1;
+function chagePic(idx){
+    if(idx) {
+        if(num ==5) return;
+        ++num
+    }
+    else{
+        if(num ==1) return;
+        --num
+    }
+    var imgTag = document . getElementById("ryu");
+    imgTag.setAttribute("src", "ryu0"+num+".jpg")
+}
+
+    </script>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li class="on" class="a"><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">Gallery</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="cnt01"><p>CONTENT01</p></div>
+        <div class="cnt02">
+            <div class="card">
+                <img src="kiru.jpg" alt="">
+                <div class="text">
+                    <h2>키류</h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="mazima.jpg" alt="">
+                <div class="text">
+                    <h2>마지마</h2>
+                </div>
+            </div>
+        </div>
+        <div class="cnt03">
+            <div>
+                <img id="ryu" src="ryu01.jpg" alt="">
+                <br><button class="before" onclick="chagePic(0)">이전</button>
+                <button class="next" onclick="chagePic(1)">다음</button>
+            </div>
+        </div>
+   
+    </div>
+</body>
+</html>

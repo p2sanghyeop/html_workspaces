@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .side-nav{
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: royalblue;
+            padding: 20px 30px;
+        }
+        .nav-link{
+            list-style: none;
+            padding: 10px;
+        }
+        .nav-link li:hover{
+            background-color: beige;
+            border-radius: 10px;
+            transition: 0.8s;
+        }
+        .nav-link a{
+            text-decoration: none;
+            color: snow;
+            padding: 10px;
+        }
+        .nav-link li i{
+            font-size: 20px;
+            padding: 5px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/7f3a427fdf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="side-nav">
+                <ul class="nav-link">
+                    <li><a href=""><i class="fa-solid fa-house" style="color: black;"></i> HOME</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-solid fa-message" style="color: blue;"></i> Message </a></li>
+                    <li>
+                        <a href=""><i class="fa-solid fa-gear" style="color: gray;"></i> Setting</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

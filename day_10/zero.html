@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style>
+        *{margin:0;padding:0}
+html, body{overflow-y:hidden}
+ul, ol{list-style:none}
+.header{position:fixed;z-index:10;top:30%; left: 80%; width:100%}
+.header ul:after{content:"";display:block;clear:both}
+.header ul li{box-sizing:border-box;width:15%}
+.header ul li:first-child{border-left:none}
+.header ul li a{display:block;height:60px;
+    text-align:center;line-height:60px;font-size:20px;text-decoration:none; color: aliceblue;}
+.header ul li.on a{
+    border-radius: 15px;
+    opacity: 0.7;
+    background-color: slategrey;color:crimson}
+.content{}
+.content div{position:relative}
+
+.content .cnt02{
+    background-image: linear-gradient(rgba(42, 37, 65, 0.8),rgba(42, 37, 65, 0.8)),
+    url(zero.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.content .cnt03{
+    background-image: linear-gradient(rgba(22, 21, 22, 0.8),rgba(22, 21, 22, 0.8)),
+    url(zero1.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.card{
+            position: relative;
+            top: 5%;
+            left: 25%;
+            display: inline-block;
+            margin: 15px;
+            border-radius: 10px;
+            height: 250px;
+            width: 150px;
+            padding: auto;
+            overflow: hidden;
+            box-shadow: 0 15px 20px slategray;
+            transform: scale(1);
+            transition: 2s;
+        }
+        .card img{
+            width: 150px;
+            height: 200px;
+        }
+        .card:hover{
+            cursor: pointer;
+            transform: scale(1.25);
+            background-color: thistle;
+        }
+        .text{
+            padding: 5px;
+            text-align: center;
+        }
+        .content .cnt03 img{
+    width: 300px;
+    height: 250px;
+    padding: 10px;
+    opacity: 0.8;
+    position: relative;
+    left: 30%;
+
+    }
+    .content .cnt03 button{
+    position: relative;
+    left: 43%;
+}
+    </style>
+    <script>
+        var scroll = function(){
+    
+    var $nav = null,
+        $cnt = null,
+        moveCnt = null,
+        moveIndex = 0,
+        moveCntTop = 0,
+        winH = 0,
+        time = false; // 새로 만든 변수
+
+    $(document).ready(function(){
+        init();
+        initEvent();
+    });
+    
+    var init = function(){
+        $cnt = $(".content");
+        $nav = $(".header a");
+    };
+    
+    var initEvent = function(){
+        $("html ,body").scrollTop(0);
+        winResize();
+        $(window).resize(function(){
+            winResize();
+        });
+        $nav.on("click", function(){
+            moveIndex = $(this).parent("li").index();
+            moving(moveIndex);
+            return false;
+        });
+        $cnt.on("mousewheel", function(e){
+            if(time === false){ // time 변수가 펄스일때만 휠 이벤트 실행
+              wheel(e);
+            }
+        });
+    };
+        
+    var winResize = function(){
+        winH = $(window).height();
+        $cnt.children("div").height(winH);
+        $("html ,body").scrollTop(moveIndex.scrollTop);
+    };
+    
+    var wheel = function(e){
+        if(e.originalEvent.wheelDelta < 0){
+            if(moveIndex < 3){
+                moveIndex += 1;
+                moving(moveIndex);
+            };
+        }else{
+            if(moveIndex > 0){
+                moveIndex -= 1;
+                moving(moveIndex);
+            };
+        };
+    };
+    
+    var moving = function(index){
+        time = true // 휠 이벤트가 실행 동시에 true로 변경
+        moveCnt = $cnt.children("div").eq(index);
+        moveCntTop = moveCnt.offset().top;
+        $("html ,body").stop().animate({
+            scrollTop: moveCntTop
+        }, 1000, function(){
+          time = false; // 휠 이벤트가 끝나면 false로 변경
+        });
+        $nav.parent("li").eq(index).addClass("on").siblings().removeClass("on");
+    };
+    
+};
+
+scroll();
+
+var num = 1;
+function chagePic(idx){
+    if(idx) {
+        if(num ==5) return;
+        ++num
+    }
+    else{
+        if(num ==1) return;
+        --num
+    }
+    var imgTag = document . getElementById("ryu");
+    imgTag.setAttribute("src", "ryu0"+num+".jpg")
+}
+    </script>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li class="on" class="a"><a href="#">HOME</a></li>
+            <li><a href="#">Character</a></li>
+            <li><a href="#">Gallery</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="cnt01">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/j94jWA31cG0?mute=1&autoplay=1&rel=0&controls=0&showinfo=0" 
+            allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
+        </div>
+        <div class="cnt02">
+            <div class="card">
+                <img src="kiru.jpg" alt="">
+                <div class="text">
+                    <h2>키류</h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="mazima.jpg" alt="">
+                <div class="text">
+                    <h2>마지마</h2>
+                </div>
+            </div>
+        </div>  
+        <div class="cnt03">
+            <img id="ryu" src="ryu01.jpg" alt="">
+                    <br><button class="before" onclick="chagePic(0)">이전</button>
+                    <button class="next" onclick="chagePic(1)">다음</button>
+        </div>
+    </div>
+</body>
+</html>

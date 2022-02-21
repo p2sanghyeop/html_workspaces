@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        section{
+            width: 80%;
+            height: 200px;
+            background-color: black;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+        .row{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .item{
+            background-color: aqua;
+            width: 200px;
+            height: 180px;
+            flex-basis: 20%;
+        }
+        .class02 .row .item:nth-child(1){
+            background-color: red;
+            flex-grow: 1;
+        }
+        .row-col{
+            padding: 10px;
+            display: flex;
+            width: 50%;
+            height: 150px;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .item-col{
+            width: 100%;
+            height: 20px;
+            background-color: black;
+            border: 2px solid white;
+            animation: box 5s linear infinite;
+        }
+        .class02 .item{
+            border: 2px solid snow;
+        }
+        @keyframes box{
+            0%{
+                width: 100%;
+            }
+            100%{
+                width: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- flex 컨테이너(선장) 아이템(선원)으로 구성 -->
+    <!-- 컨테이너 기능과 아이템 기능으로 나뉨 -->
+    <!-- 컨테이너는 아이템 배치 아이템은 각각아이템 크기, 넓이 설정 -->
+    <!-- 컨테이너 css -->
+    <!-- display : flex, justify-content : space- between -->
+    <!-- 아이템 css -->
+    <!-- flex-basis, flex-grow, flex  -->
+    <div class="container">
+        <section class="class01">
+            <div class="row">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </section>
+        <section class="class02">
+            <div class="row">
+                <div class="item">
+                    <div class="row-col">
+                        <div class="item-col"></div>
+                        <div class="item-col"></div>
+                        <div class="item-col"></div>
+                    </div>
+                </div>
+                <div class="item"></div>
+                <div class="item"></div>
+        </section>
+    </div>
+</body>
+</html>

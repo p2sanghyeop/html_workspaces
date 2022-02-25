@@ -29,6 +29,10 @@
             color: crimson;
             font-size: 25px;
         }
+        .gallery-title p{
+            font-size: 15px;
+            color: aliceblue;
+        }
         .gallery-col img{
             width: 100%;
             height: 100%;
@@ -70,17 +74,6 @@
             background-size: cover;
             
         }
-      .jb-box { 
-        width: 100%; 
-        height: 500px; 
-        overflow:hidden;
-        margin:0px auto; 
-        position: relative;
-        display: flex;
-    }
-      video { width: 100%; }
-      .jb-text { position: absolute; top: 50%; width: 100%; }
-      .jb-text p { margin-top: -24px; text-align: center; font-size: 48px; color: #ffffff; }
       footer{
           margin-top: 50px;
           display: flex;
@@ -91,16 +84,71 @@
           text-decoration: none;
           color: black;
       }
+    .pop-up{ 
+    background-color:#fff;
+    border-radius:15px;
+    color:#000;
+    display:none; 
+    padding:20px;
+    min-width:400px;
+    min-height: 180px;
+    margin-top: 20px;
+	}
+	.b-close{
+		cursor:pointer;
+		position:absolute;
+		right:10px;
+		top:5px;
+    }
+    .video img{
+        width: 100%;
+        height: 300px;
+        margin-top: 25px;
+        opacity: 0;
+    }
+    .video img:hover{
+        cursor: pointer;
+    }
     </style>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="jquery.bpopup-0.10.0.min.js"></script>
+    <script>
+        ;(function($) {
+            // DOM Ready
+           $(function() {
+               // Binding a click event
+               // From jQuery v.1.7.0 use .on() instead of .bind()
+               $('#my-img').bind('click', function(e) {
+           var self = $(this) //button
+           , content = $('.content'); 
+           $('element_to_pop_up').bPopup({
+               onOpen: function() {
+                   content.html(self.data('bpopup') || '');
+               },
+               onClose: function() {
+                   content.empty();
+               }
+           });
+                   // Prevents the default action to be triggered. 
+                   e.preventDefault();
+                   // Triggering bPopup when click event is fired
+                   $('#element_to_pop_up').bPopup();
+               });
+           });
+       })(jQuery);
+   </script>
 </head>
 <body>
     <div class="container">
-        <div class="jb-box">
-            <video muted autoplay loop>
-              <source src="블러드본 DLC 트레일러 Bloodborne The Old Hunters Trailer 2015.mp4" type="video/mp4">
-              <strong>Your browser does not support the video tag.</strong>
-            </video>
-        </div>
+    
+    <div class="video">
+	<img src="from/blood.jpg" id="my-img" alt="">
+	<!-- Element to pop up -->
+	<div class="pop-up" id="element_to_pop_up">
+		<a class="b-close">x</a>
+		<iframe width="640" height="360" src="블러드본 한글자막 스토리 트레일러.mp4" frameborder="0" allowfullscreen></iframe>
+		</div>
+    </div>
         <section class="gallery">
             <div class="gallery-title">
                 <h1>Bloodbone</h1>

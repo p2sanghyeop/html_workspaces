@@ -1,0 +1,75 @@
+/* root : 최상위 계층, 관리자 권한 */
+:root{
+    /* 자주사용하는 color 모음 */
+    /* 자주 사용하는 color에 변수 이름을 만듬
+    변수이름을 활용함 */
+    --mainColor: #eaeaea;
+    --secondaryColor: #fff;
+    --borderColor: #c1c1c1;
+}
+@font-face {
+    font-family: 'ACCchildrenheartOTF-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenheartOTF-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* h3~h6 공통처리 */
+h3,h6{
+    font-family: 'ACCchildrenheartOTF-Regular';
+    font-weight: 500;
+}
+section{
+    background-color: var(--mainColor);
+    border-bottom: 1px solid var(--borderColor);
+}
+.project-container{
+    width: 1200px;
+    /* 위 아래는 없고 오른쪽 왼쪽은 자동으로 맞추기 */
+    margin: 0 auto;
+}
+.project-container h3{
+    font-size: 28px;
+    text-align: center;
+    margin: 28px 0;
+}
+.post-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 280px);
+    gap: 20px;
+}
+.post img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.post-preview{
+    background-color: var(--secondaryColor);
+    padding: 5%;
+}
+.post-preview h6{
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+.post-preview p{
+    color: #4b5156;
+    font-size: 14px;
+    margin: 14px 0;
+}
+.post-preview a{
+    text-transform: none;
+    color: #17a2b8;
+}
+.post{
+    border: 1px solid var(--borderColor);
+    box-shadow: -2px 7px 12px -9px rgba(0,0,0,0.75);
+    transition: 2s;
+}
+.post:hover{
+transform: scale(1.5);
+}

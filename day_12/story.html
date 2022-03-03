@@ -16,6 +16,28 @@
             height: 100vh;
         }
         </style>
+        <script src="jquery-1.11.2.min.js"></script>
+    <script src="jquery.bpopup-0.10.0.min.js"></script>
+        <script>
+            ;(function($) {
+               $(function() {
+                   $('#my-img').bind('click', function(e) {
+               var self = $(this)
+               , content = $('.content'); 
+               $('element_to_pop_up').bPopup({
+                   onOpen: function() {
+                       content.html(self.data('bpopup') || '');
+                   },
+                   onClose: function() {
+                       content.empty();
+                   }
+               }); 
+                       e.preventDefault();
+                       $('#element_to_pop_up').bPopup();
+                   });
+               });
+           })(jQuery);     
+       </script>
 </head>
 <body>
     <div class="container">

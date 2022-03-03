@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        section{
+            width: 90%;
+            height: auto;
+            background-color: indigo;
+            margin: 40px auto 0;
+        }
+        .title{
+            text-align: center;
+            font-size: 40px;
+            padding: 10px;
+        }
+        .row{
+            display: flex;
+            justify-content: space-around;
+        }
+        .card{
+            background-color: cornflowerblue;
+            padding: 3%;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            margin-top: 25px;
+            flex-basis: 20%;
+        }
+        .card p{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .card h2{
+            font-size: 35px;
+        }
+        .card h2 span{
+            font-size: 20px;
+        }
+        .card ul{
+            text-align: left;
+        }
+        .card ul li{
+            margin-top: 10px;
+            list-style: none;
+        }
+        .card ul ::before{
+            color: blueviolet;
+            content: "*";
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .card button{
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px;
+            font-size: 15px;
+            background: transparent;
+            border: 1px solid lightcyan;
+            border-radius: 5px;
+        }
+        .card button:hover{
+            cursor: pointer;
+            background-color: lightcyan;
+            transition: 3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section>
+            <div class="title">
+                <h1>Choose your plan</h1>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <p>Starter</p>
+                    <h2>19$ <span>/month</span></h2>
+                    <ul>
+                        <li>1 website</li>
+                        <li>10GB Disk Space </li>
+                        <li>Free Email Adress</li>
+                        <li>Basic Web Bulider</li>
+                        <li>NO SSL Ceritition</li>
+                        <li>Limited Support</li>
+                    </ul>
+                    <button>Add To Card</button>
+                </div>
+                <div class="card">
+                    <p>Advanced</p>
+                    <h2>29$ <span>/month</span></h2>
+                    <ul>
+                        <li>10 website</li>
+                        <li>50GB Disk Space </li>
+                        <li>Free Email Adress</li>
+                        <li>Advanced Web Bulider</li>
+                        <li>Free SSL Ceritition</li>
+                        <li>Unlimited Support</li>
+                    </ul>
+                    <button>Add To Card</button>
+                </div>
+                <div class="card">
+                    <p>Premium</p>
+                    <h2>49$ <span>/month</span></h2>
+                    <ul>
+                        <li>100 website</li>
+                        <li>100GB Disk Space </li>
+                        <li>Free Email Adress</li>
+                        <li>Advanced Web Bulider</li>
+                        <li>Free SSL Ceritition</li>
+                        <li>Unlimited Support</li>
+                    </ul>
+                    <button>Add To Card</button>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+</body>
+</html>

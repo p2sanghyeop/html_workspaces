@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        span{
+            display: inline-block;
+            animation: waviy 1.5s infinite;
+            animation-delay: calc(0.1s *var(--i));
+        }
+        @keyframes waviy{
+            0%,
+            40%,
+            100%{
+                transform: translateY(0);
+            }
+            20%{
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main-container">
+           <!-- greeting-wrapper 인사글 -->
+            <div class="greeting-wrapper">
+                <span style="--i:1">H</span>
+                <span style="--i:2">e</span>
+                <span style="--i:3">l</span>
+                <span style="--i:4">l</span>
+                <span style="--i:5">o</span>
+                <span style="--i:6">W</span>
+                <span style="--i:7">o</span>
+                <span style="--i:8">r</span>
+                <span style="--i:9">d</span>
+                <span style="--i:10">!</span>
+                <h1>Hello Word!</h1>
+            </div>
+            <!-- intro wrapper : 본인소개 (증명사진 및 뭐 잘하는지) -->
+            <div class="intro-wrapper">
+                <!-- gird 예정 -->
+                <div class="nav-wrapper">
+                    <div class="dots-wrapper">
+                        <!-- id 이름은 고유해야한다 -->
+                        <div id="dot-1" class="dot"></div>
+                        <div id="dot-2" class="dot"></div>
+                        <div id="dot-3" class="dot"></div>
+                    </div>
+                </div>
+                <!-- 내정보 -->
+                <div class="info-wrapper">
+                    <img src="bear.jpg" alt="">
+                    <h5>SangHyeop Lee</h5>
+                </div>
+                <!-- 나는 뭘 하는가 -->
+                <div class="do-wrapper">
+                    <div class="preview-shadow">
+                        <div class="preview">
+                            <div id="corner-tl" class="conrner"></div>
+                            <div id="corner-tr" class="conrner"></div>
+                            <h3>What I DO</h3>
+                            <p>Javascript와 AWS를 주로 다룹니다</p>
+                            <div id="corner-bl" class="conrner"></div>
+                            <div id="corner-br" class="conrner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

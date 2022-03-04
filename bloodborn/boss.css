@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.boss{
+    text-align: center;
+    background-image: url(from/blood6.png);
+    background-position: center;
+    background-size: cover;
+    padding-top: 30px;
+}
+.boss img{
+    width: 400px;
+    height: 400px;
+}
+.boss .title{
+    display: flex;
+    justify-content: center;
+}
+.boss h2{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: seashell;
+}
+.tab{
+    padding-bottom: 30px;
+}
+table{
+    border-collapse: collapse;
+    margin: auto;
+    color: snow;
+    padding: 30px;
+}
+tr {
+    border: 2px solid blanchedalmond;
+}
+thead {
+    border-collapse: separate;
+    box-shadow: 0 1px 5px grey;
+    border: 1px solid #444444;
+}
+
+th {
+    border: 2px solid blanchedalmond;
+    letter-spacing: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-align: center;
+}
+tbody {
+    border-collapse: separate;
+}
+
+td {
+    border: 2px solid blanchedalmond;
+    text-align: center;
+}
+.link{
+    background-color: cornsilk;
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-around;
+    align-items: center;
+}
+.link ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 30px;
+}
+.link ul li a{
+    text-decoration: none;
+    color: firebrick;
+    font-weight: 500;
+}
+.link h1{
+    color: darkred;
+    font-size: 30px;
+}

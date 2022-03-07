@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+         margin: 3% auto 0;
+        }
+        .card{
+            position: relative;
+            left: 250px;
+            display: inline-block;
+            margin: 15px;
+            height: 500px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 5px 10px 15px 7px darkblue;
+        }
+        .card:hover{
+            transition: 3s;
+            transform: scale(1.2);
+        }
+        .card img{
+            width: 300px;
+            height: 400px;
+        }
+        .text{
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div class="card">
+                <img src="/day_10/kiru.jpg" alt="">
+                <div class="text">
+                    <h1>키류 카즈마</h1>
+                    <p>도지마의 용</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/day_10/mazima.jpg" alt="">
+                <div class="text">
+                    <h1>마지마 고로</h1>
+                    <p>시마노의 광견</p>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

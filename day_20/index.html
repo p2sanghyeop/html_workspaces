@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .dashboard-graph{
+            padding: 2%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 30px;
+        }
+        .dashboard-graph-circle{
+            background-color: #fff;
+            width: 100%;
+            height: auto;
+            padding: 6% 3%;
+            border-radius: 15px;
+        }
+        .container{
+            background-color: #778;
+        }
+        .dashboard-graph-circle h3{
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 5%;
+        }
+        .dashboard-graph-circle p{
+            text-align: left;
+            width: 60%;
+        }
+        .yellow{
+            position: relative;
+            border-top: 7px solid #f6c23e;
+        }
+        .dashboard-graph-circle .yellow p{
+            font-size: 40px;
+            text-align: center;
+            position: absolute;
+            left: 21%;
+            top: 44%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- dashboard-graph : 그래프관련 대시보드 -->
+        <div class="dashboard-graph">
+            <!-- dashboard-graph-circle : circle 그래프 UI -->
+            <div class="dashboard-graph-circle">
+                <h3>올해 매출액</h3>
+                <p>목표 매출액 : <span>80%</span></p>
+                <p>작년 매출액 : <span>60.5%</span></p>
+                <div class="border yellow">
+                    <!-- 그래프 넣을 예정 -->
+                    <p>91%</p>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <div class="dashboard-graph-circle">
+                <h3>올해 매출액</h3>
+                <p>목표 매출액 : <span>80%</span></p>
+                <p>작년 매출액 : <span>60.5%</span></p>
+                <div class="border yellow">
+                    <!-- 그래프 넣을 예정 -->
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div>
+            <div class="dashboard-graph-circle">
+                <h3>올해 매출액</h3>
+                <p>목표 매출액 : <span>80%</span></p>
+                <p>작년 매출액 : <span>60.5%</span></p>
+                <div class="border yellow">
+                    <!-- 그래프 넣을 예정 -->
+                    <canvas id="myChart3"></canvas>
+                </div>
+            </div>
+            <div class="dashboard-graph-circle">
+                <h3>올해 매출액</h3>
+                <p>목표 매출액 : <span>80%</span></p>
+                <p>작년 매출액 : <span>60.5%</span></p>
+                <div class="border yellow">
+                    <!-- 그래프 넣을 예정 -->
+                    <canvas id="myChart4"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- script 작성 -->
+    <script>
+        //그래프에 데이터를 넣기 위해서 코딩이 필요
+        //상수 변수명은 대문자로 (암묵적인 코딩 약속)
+        const DATA_SEIINGS = {
+            //JSON (key와 value로 구성) 프론트에만 사용하는게 아님
+            //key : 중복불가능(고유한 값)
+            //value : 데이터 타입이 온다 -> 값(문자형, 정수형, 논리형(boolean), 배열...)
+            datasets: [
+                {
+                label : "2022 매출 통계",
+                //그래프에 들어갈 데이터
+                data:[20, 80],
+                backgroundColor: ["rgb(245, 245, 245)", "rgb(255,205,86)"],
+            },
+        ],
+        };
+
+        const My_CHART_DATA = {
+            type: "doughnut",
+            data: DATA_SEIINGS,
+        };
+
+        // 차트를 생성할 준비
+        // 프로그래밍에서 new 키워드가 있음녀 객체지향 언어를 의미
+        //  Where?
+        // chart.js 다운 받을때 폴더안에 chart라는 클래스 파일이 있음
+        new Chart(document.getElementById("myChart"),My_CHART_DATA);
+    </script>
+    <script>
+        //그래프에 데이터를 넣기 위해서 코딩이 필요
+        //상수 변수명은 대문자로 (암묵적인 코딩 약속)
+        const DATA_SEIINGS2 = {
+            //JSON (key와 value로 구성) 프론트에만 사용하는게 아님
+            //key : 중복불가능(고유한 값)
+            //value : 데이터 타입이 온다 -> 값(문자형, 정수형, 논리형(boolean), 배열...)
+            datasets: [
+                {
+                label : "2022 매출 통계",
+                //그래프에 들어갈 데이터
+                data:[50, 50],
+                backgroundColor: ["rgb(64, 68, 135)", "rgb(59, 124, 133)"],
+            },
+        ],
+        };
+
+        const My_CHART_DATA2 = {
+            type: "doughnut",
+            data: DATA_SEIINGS2,
+        };
+
+        // 차트를 생성할 준비
+        // 프로그래밍에서 new 키워드가 있음녀 객체지향 언어를 의미
+        //  Where?
+        // chart.js 다운 받을때 폴더안에 chart라는 클래스 파일이 있음
+        new Chart(document.getElementById("myChart2"),My_CHART_DATA2);
+    </script>
+    <script>
+        //그래프에 데이터를 넣기 위해서 코딩이 필요
+        //상수 변수명은 대문자로 (암묵적인 코딩 약속)
+        const DATA_SEIINGS3 = {
+            //JSON (key와 value로 구성) 프론트에만 사용하는게 아님
+            //key : 중복불가능(고유한 값)
+            //value : 데이터 타입이 온다 -> 값(문자형, 정수형, 논리형(boolean), 배열...)
+            datasets: [
+                {
+                label : "2022 매출 통계",
+                //그래프에 들어갈 데이터
+                data:[40, 30, 30 ],
+                backgroundColor: ["rgb(2, 36, 252)", "rgb(252, 10, 2)", "rgb(14, 252, 2)"],
+            },
+        ],
+        };
+
+        const My_CHART_DATA3 = {
+            type: "pie",
+            data: DATA_SEIINGS3,
+        };
+
+        // 차트를 생성할 준비
+        // 프로그래밍에서 new 키워드가 있음녀 객체지향 언어를 의미
+        //  Where?
+        // chart.js 다운 받을때 폴더안에 chart라는 클래스 파일이 있음
+        new Chart(document.getElementById("myChart3"),My_CHART_DATA3);
+    </script>
+    <script>
+        //그래프에 데이터를 넣기 위해서 코딩이 필요
+        //상수 변수명은 대문자로 (암묵적인 코딩 약속)
+        const DATA_SEIINGS4 = {
+            //JSON (key와 value로 구성) 프론트에만 사용하는게 아님
+            //key : 중복불가능(고유한 값)
+            //value : 데이터 타입이 온다 -> 값(문자형, 정수형, 논리형(boolean), 배열...)
+            datasets: [
+                {
+                label : "2022 매출 통계",
+                //그래프에 들어갈 데이터
+                data:[10, 20, 10, 10, 10, 10, 10],
+                backgroundColor: ["rgb(252, 2, 2)", "rgb(252, 139, 2 )", "rgb(245, 252, 2 )",
+            "rgb(51, 252, 2 )", "rgb(2, 112, 252 )", "rgb(48, 2, 252 )", "rgb(105, 2, 252)"],
+            },
+        ],
+        };
+
+        const My_CHART_DATA4 = {
+            type: "doughnut",
+            data: DATA_SEIINGS4,
+        };
+
+        // 차트를 생성할 준비
+        // 프로그래밍에서 new 키워드가 있음녀 객체지향 언어를 의미
+        //  Where?
+        // chart.js 다운 받을때 폴더안에 chart라는 클래스 파일이 있음
+        new Chart(document.getElementById("myChart4"),My_CHART_DATA4);
+    </script>
+</body>
+</html>

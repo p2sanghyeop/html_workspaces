@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            background-color: navy;
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo{
+            flex-basis: 30%;
+            padding: 2%;
+        }
+        .logo button{
+            font-size: 35px;
+            border: none;
+            padding: 14px 16px;
+            background: transparent;
+            color: snow;
+        }
+        .logo-content{
+            /* display : none  안보이게 해줌
+                display : block 보여줌 */
+            position: absolute;
+            display: none;
+            background-color: aliceblue;
+        }
+        .logo-content a{
+            width: 160px;
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            text-align: left;
+            color: black;
+        }
+        .logo:hover .logo-content{
+            display: block;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/7f3a427fdf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+          
+            <div class="logo">
+            <button><i class="fa-brands fa-dropbox"></i> Dropdown</button>
+            <div class="logo-content">
+                <a href="#">Link1</a>
+                <a href="#">Link2</a>
+                <a href="#">Link3</a>
+            </div>
+            </div>
+        </header>
+    </div>
+</body>
+</html>

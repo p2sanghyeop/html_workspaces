@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header{
+            background-color: coral;
+            height: auto;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .menu-content{
+            position: absolute;
+            display: none;
+            background-color: cornflowerblue;
+        }
+        .menu-content a{
+            display: block;
+            padding: 10px;
+        }
+        .menu:hover .menu-content{
+            display: block;
+        }
+        .menu-content2{
+            position: absolute;
+            display: none;
+            background-color: cornflowerblue;
+        }
+        .menu-content2 a{
+            display: block;
+            padding: 10px;
+        }
+        .menu2:hover .menu-content2{
+            display: block;
+        }
+        .menu-content3{
+            position: absolute;
+            display: none;
+            background-color: cornflowerblue;
+        }
+        .menu-content3 a{
+            display: block;
+            padding: 10px;
+        }
+        .menu3:hover .menu-content3{
+            display: block;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/7f3a427fdf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="menu">
+                <h2><i class="fa-brands fa-playstation"></i>Play Station</h2>
+                <div class="menu-content">
+                    <a href="/html_workspaces/bloodborn/bloodborn.html">Blood Born</a>
+                    <a href="/html_workspaces/Dark Soul/darksoul3.html">Dark Soul3</a>
+                </div>
+            </div>
+            <div class="menu2">
+              <h2><i class="fa-brands fa-steam"></i>Steam</h2>
+                <ul class="menu-content2">
+                    <li><a href="#">Devil May Cry</a></li>
+                    <li><a href="#">Crysis</a></li>
+                </ul>
+            </div>
+            <div class="menu3">
+              <h2><i class="fa-brands fa-xbox"></i>Xbox</h2>
+                <ul class="menu-content3">
+                    <li><a href="#">HALO INFINITE</a></li>
+                    <li><a href="#">Monster Hunter Word</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+</body>
+</html>

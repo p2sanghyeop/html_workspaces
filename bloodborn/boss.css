@@ -78,3 +78,12 @@ td {
     color: darkred;
     font-size: 30px;
 }
+.title .fase-1{
+    margin-right: 25px;
+}
+.title .fase-2{
+    margin-left: 25px;
+}
+.boss .space{
+    padding-top: 35px;
+}

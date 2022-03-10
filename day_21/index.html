@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .blue{
+            background-color: blue;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+        }
+        .red{
+            background-color: red;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        //함수(메소드)
+        //javascript 함수는 리턴타입이 없다
+        function changeColor(){
+            //바닐라 스크립트 문법
+            var color = document.getElementById("blue").style.backgroundColor
+            if(color == "black") {
+                alert("검은색");
+                return 0;
+            }
+            document.getElementById("blue").style.backgroundColor = "black";
+            document.getElementById("blue").style.backgroundColor = "black";
+            console.log(color);
+        }
+        //함수이름은 동사! 명사X
+        function hide(){
+            document.getElementById("blue").style.display="none";
+        }
+        function  reset(){
+            document.getElementById("blue").style.backgroundColor = "blue"
+            document.getElementById("blue").style.display="block"
+        }
+        function checkuserid(){
+           var userpassword = document.getElementById("userpassword").value;
+           var userpassword2 = document.getElementById("userpassword2").value;
+           if(userpassword == userpassword2){
+               confirm("비빌먼호 일치");
+           }
+           console.log(userpassword)
+        }
+    </script>
+</head>
+<body>
+    <!-- script를 이용한 css 컨트롤 -->
+    <div class="container"> 
+        <!-- onclick에 함수이름 넣기 -->
+        <div class="blue" id="blue" onclick="changeColor()"></div>
+        <div class="red" id="red" onclick="hide()"></div>
+        <div class="clear" onclick="reset()">
+            <button>ALL CLEAR</button>
+        </div>
+        <div class="form">
+            <input type="password" id="userpassword" value="" onkeyup="checkuserid()" />
+            <input type="password" id="userpassword2" value="" onkeyup="checkuserid()" />
+        </div>
+    </div>
+</body>
+</html>

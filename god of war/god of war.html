@@ -22,14 +22,13 @@ ul, ol{list-style:none}
 .header ul li.on a{background-color:#fff;color:#000}
 .content{}
 .content div{position:relative}
-.content .cnt01{background: url(god/god1.jpg);}
 .content .cnt02{background: radial-gradient(rgba(4,10,20,0.8),rgba(4,10,20,0.8)),
     url(god/god2.jpg);
     background-position: center;
     background-size: cover;
 }
-.content .cnt03{background-color:#6699cc}
-.content .cnt04{background-color:#66cc99}
+.content .cnt03{background-color:slategray}
+.content .cnt04{background: radial-gradient(rgba(15, 21, 37, 0.8),rgba(15, 21, 37, 0.8)),url(god/god6.jpg);}
 .content .cnt02 .start{
     position:absolute;
     top:20%;
@@ -61,13 +60,110 @@ ul, ol{list-style:none}
     padding-right: 55px;
     color: #fff;
 }
+.content .cnt02 .text-box p{
+    margin: 0px 0px 20px;
+}
 .content .cnt03 .contentgrid{
     display: grid;
 }
 .content .cnt03 .contentgrid .title{
     text-align: center;
+    padding-top: 7%;
+    font-size: 20px;
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    width: 80%;
+    height: auto;
+    margin: 10px auto 0;
+    padding-top: 3%;
+}
+.item{
+        width: 100%;
+        height: 300px;
+        }
+        .item img{
+        width: 100%;
+        height: 200px;
+        }
+        .item p{
+        padding-top: 15px;
+        text-align: center;
+        }
+.item h3{
+    padding-top: 10px;
+    text-align: center;
+}
+.item video{
+    width: 100%;
+    height:200px;
+    object-fit: fill;
+}
+.content .cnt04 header{
+    text-align: center;
     padding-top: 5%;
-    font-size: 25px;
+}
+.content .cnt04 header h2{
+    font-size: 30px;
+    padding-bottom: 20px;
+    color: snow;
+}
+.content .cnt04 header p{
+    font-size: 20px;
+    color: snow;
+}
+.flexbox{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    height: auto;
+    margin: 10px auto 0;
+    padding-top: 3%;
+}
+.flexvideo{
+    display: flex;
+}
+.flexvideo video{
+    width: 600px;
+    margin-right: 50px;
+}
+.videotext{
+    display: flex;
+    height: auto;
+    color: snow;
+}
+.videotext ul li{
+    padding-bottom: 15px;
+}
+footer{
+    padding-top: 15px;
+    position: absolute;
+    right: 15%;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+footer button{
+    margin-left: 20px;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.steam:hover{
+    border: 5px solid aliceblue;
+    transition: 3s;
+}
+.epic:hover{
+    border: 5px solid aliceblue;
+    transition: 3s;
+}
+
+footer button a{
+    text-decoration: none;
+    color: #000;
 }
 .pop-up{ 
     background-color:#fff;
@@ -79,7 +175,7 @@ ul, ol{list-style:none}
     min-height: 300px;
     margin-top: 20px;
 	}
-	.b-close{
+.b-close{
 		cursor:pointer;
 		position:absolute;
 		right:10px;
@@ -96,7 +192,9 @@ ul, ol{list-style:none}
     .pop-up .b-close i{
         font-size: 15px;
     }
+    
     </style>
+    <script src="https://kit.fontawesome.com/7f3a427fdf.js" crossorigin="anonymous"></script>
     <script>
         (function($) {
            $(function() {
@@ -199,9 +297,9 @@ scroll();
         <div class="header">
             <ul>
                 <li class="on" class="a"><a href="#">HOME</a></li>
-                <li><a href="#">GAME OVERVIEW</a></li>
+                <li><a href="#">Game overview</a></li>
                 <li><a href="#">Key features</a></li>
-                <li><a href="#">NAV04</a></li>
+                <li><a href="#">PC</a></li>
             </ul>
         </div>
         <div class="content">
@@ -210,7 +308,11 @@ scroll();
                     <div class="pop-up" id="element_to_pop_up">
                         <a class="b-close"><i style="position: relative; left: 3px; bottom: 4px;"
                             class="fa-solid fa-circle-xmark"></i></a>
-                        <iframe width="730" height="440" src="https://www.youtube.com/embed/X5b2JkrzJtw" frameborder="0" allowfullscreen></iframe>
+                        <iframe  width="730" height="440" style="margin: 0px;
+                        padding: 0px;
+                        border: 0px;
+                        float: left" 
+                        src="https://www.youtube.com/embed/X5b2JkrzJtw" frameborder="0" allowfullscreen></iframe>
                     </div>
             </div>
             <div class="cnt02">
@@ -222,7 +324,6 @@ scroll();
                     <p>It’s in this harsh, unforgiving world that he must fight to survive, and not only teach his son to do the same… but also prevent him from repeating the Ghost of Sparta’s bloodstained mistakes.</p>
                     <p>This staggering reimagining of God of War combines all the hallmarks of the iconic series – brutal combat, epic boss fights, and breathtaking scale – and fuses them with a powerful and moving narrative that re-establishes Kratos’ world.</p>
                     </div>
-                
             </div>
             <div class="cnt03">
                 <header>
@@ -230,10 +331,60 @@ scroll();
                         <div class="title">
                             <h2>Key features</h2>
                         </div>
+                    <div class="contentgrid">
+                        <div class="row">
+                            <div class="item">
+                                <img src="god/god3.jpg" alt="">
+                                <h3>Enter the Norse realm</h3>
+                                <p>His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… And teach his son to do the same.</p>
+                            </div>
+                            <div class="item">
+                                <img src="god/god4.jpg" alt="">
+                                <h3>A second chance</h3>
+                                <p>Kratos is a father again. As mentor and protector to Atreus, a son determined to earn his respect, he is forced to deal with and control the rage that has long defined him while out in a very dangerous world with his son.</p>
+                            </div>
+                            <div class="item">
+                                <img src="god/god5.jpg" alt="">
+                                <h3>A darker, more elemental world</h3>
+                                <p>From the marble and columns of ornate Olympus to the gritty forests, mountains, and caves of Pre-Viking Norse lore, this is a distinctly new realm with its own pantheon of creatures, monsters, and gods.</p>
+                            </div>
+                            <div class="item">
+                                <video src="god/combat..mp4" autoplay="1"; loop="1" allowfullscreen></video>
+                                <h3>Visceral physical combat</h3>
+                                <p>With an over the shoulder free camera that brings the player closer to the action than ever before, fights in God of War mirror the pantheon of Norse creatures Kratos will face: grand, gritty, and grueling. A new main weapon and new abilities retain the defining spirit of God of War while presenting a vision of violent conflict that forges new ground in the genre.</p>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </header>
             </div>
-            <div class="cnt04"><p>CONTENT04</p></div>
+            <div class="cnt04">
+                <header>
+                    <h2>God of War for PC</h2>
+                    <p>Kratos and Atreus' 2018 adventure is now available on Steam and Epic Games Store with a range of optimizations for PC players.</p>
+                </header>
+                    <div class="flexbox">
+                        <div class="flexvideo">
+                            <video src="god/godpc.mp4" autoplay="1"; loop="1"></video>
+                        </div>
+                        <div class="videotext">
+                            <ul>
+                                <li><i class="fa-solid fa-circle" style="font-size: 5px; color: cyan;"></i> High-fidelity graphics. Striking visuals enhanced on PC. Enjoy true 4K resolution, on supported devices, with unlocked framerates for peak performance. Dial in your settings via a wide range of graphical presets and options including higher resolution shadows, improved screen space reflections, the addition of GTAO and SSDO, and much more.</li>
+                                <li><i class="fa-solid fa-circle" style="font-size: 5px; color: cyan;"></i> NVIDIA® DLSS and Reflex Support. Quality meets performance. Harness the power of NVIDIA RTX™ technologies with Deep Learning Super Sampling (DLSS), which merges higher graphical settings and output resolutions. Utilize NVIDIA Reflex low latency technology, allowing you to react quicker and hit harder combos with the responsive gameplay you crave.</li>
+                                <li><i class="fa-solid fa-circle" style="font-size: 5px; color: cyan;"></i> Controls customization. Play your way. With support for the DUALSHOCK®4 and DUALSENSE® wireless controllers, a wide range of other gamepads, and fully customizable bindings for mouse and keyboard, you have the power to fine-tune every action to match your playstyle.</li>
+                                <li><i class="fa-solid fa-circle" style="font-size: 5px; color: cyan;"></i> Ultra-wide support. Immerse yourself like never before. Journey through the Norse realms taking in breathtaking vistas in panoramic widescreen. With 21:9 ultra-widescreen support, God of War™ presents a cinema-quality experience that further expands the original seamless theatrical vision.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <footer>
+                        <div class="store">
+                            <button class="steam"><a href="https://store.steampowered.com/app/1593500/God_of_War/" target="_blank">Purchase on Steam</a></button>
+                        </div>
+                        <div class="store2">
+                            <button class="epic"><a href="https://www.epicgames.com/store/ko/p/god-of-war" target="_blank">Purchase on Epic Games</a> </button>
+                        </div>
+                    </footer>  
+            </div>
         </div>
     </div>
 </body>

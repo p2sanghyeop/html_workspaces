@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header{
+            margin-top: 15px;
+        }
+        .navigation{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: black;
+        }
+        .navigation ul{
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .navigation ul li{
+            list-style: none;
+            padding: 10px 15px;
+        }
+        .navigation ul li a{
+            text-decoration: none;
+            color: snow;
+        }
+        .navigation ul li a:hover{
+            color: goldenrod;
+            transition: 1s;
+        }
+        .main{
+            width: 100%;
+            height: 1000px;
+           background-image: url(final/final.jpg);
+           background-size: cover;
+            display: flex;
+        }
+        .store{
+            position: relative;
+            top: 40%;
+            left: 5%;
+            display: flex;
+            position: relative;
+        }
+        .main img{
+            overflow: visible;
+            width: 300px;
+            height: 300px;
+        }
+        .store-text{
+            display: block;
+            margin-left: 20px;
+        }
+        .store-text p{
+            position: relative;
+           top: 35px;
+            text-align: left;
+            font-size: 20px;
+        }
+        .store-text a{
+            text-decoration: none;
+            position: relative;
+           top: 8%;
+           font-size: 35px;
+           padding: 20px;
+           color: black;
+           border-radius: 5px;
+           background-color: darkorange;
+        }
+        .store-text a:hover{
+            color: snow;
+        }
+        .movie{
+            background-color: navy;
+            width: 100%;
+            margin: auto;
+            height: auto;
+        }
+        .movie-text{
+        font-size: 30px;
+        padding: 15px;
+        background-color: black;
+        width: 12%;
+        color: aliceblue;
+        text-align: center;
+        }       
+        .movie-tralier{
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .video img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            padding-bottom: 30px;
+            
+        }
+        .video{
+            flex-basis: 23%;
+            position: relative;
+        }
+    .pop-up{ 
+    background-color:#fff;
+    border-radius:15px;
+    color:#000;
+    display:none; 
+    padding:20px;
+    min-width: 700px;
+    min-height: 300px;
+    margin-top: 20px;
+	}
+	.b-close{
+		cursor:pointer;
+		position:absolute;
+		right:10px;
+		top:5px;
+    }
+    .pop-up .b-close i{
+        font-size: 15px;
+    }
+    .container-news{
+        background-color: gray;
+    }
+    .news{
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+        height: auto;
+        margin: 0px auto 0;
+        padding-top: 3%;
+        padding-bottom: 30px;
+    }
+    .news-img{
+        display: flex;
+        width: 600px;
+        margin-right: 30px;
+    }
+    .news-text{
+        display: flex;
+        height: auto;
+        color: snow;
+    }
+    .news-text ul li{
+    padding-bottom: 15px;
+    list-style: none;
+}
+.news-header h2{
+    font-size: 30px;
+        padding: 15px;
+        background-color: black;
+        width: 12%;
+        color: aliceblue;
+        text-align: center;
+}
+.feature-header h2{
+    font-size: 30px;
+        padding: 15px;
+        background-color: black;
+        width: 12%;
+        color: aliceblue;
+        text-align: center;
+}
+.container-feature{
+   background: radial-gradient(rgb(15, 21, 37, 0.8),rgb(15, 21, 37, 0.8)),url(final/feature-back.jpg);
+   background-size: cover;
+   background-position: center;
+   color: ghostwhite;
+}
+.feature-body{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    width: 80%;
+    height: auto;
+    margin: 10px auto 0;
+    padding-top: 30px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.feature-item img{
+    padding-top: 30px;
+    width: 100%;
+    height: auto;
+    padding-bottom: 25px;
+}
+.item-head p{
+    font-size: 25px;
+}
+.item-body p{
+    font-size: 20px;
+}
+.about-header h2{
+    font-size: 30px;
+        padding: 15px;
+        background-color: black;
+        width: 12%;
+        color: aliceblue;
+        text-align: center;
+}
+.container-about{
+    background: radial-gradient(rgba(60, 63, 83, 0.8),rgb(60, 63, 83, 0.8)),url(final/about-back.png);
+    background-size: cover;
+    background-position: center;
+}
+.swiper-slide p{
+    padding-top: 15px;
+    padding-bottom: 25px;
+    color: azure;
+}
+.swiper {
+        width: auto;
+        height: auto;
+        text-align: center;
+        }
+.buy-header h2{
+    font-size: 30px;
+        padding: 15px;
+        background-color: black;
+        width: 15%;
+        color: aliceblue;
+        text-align: center;
+}
+.language-selector{
+    padding-top: 25px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.language-selector select{
+    width: 15%;
+    text-align: center;
+    font-size: 30px;
+}
+#layer {display:none; position:absolute; top:50%; left:30%; width:600px; height:376px; margin:-188px 0 0 -300px; padding:20px; background:#eee; box-shadow:1px 1px 10px rgba(0,0,0,0.3); border:1px solid #dadada; z-index:21;}
+#layer #player {display:block; margin:20px auto 0;}
+#layer .inner {position:relative;}
+#layer .inner .close {position:absolute; top:-30px; right:0; display:block; width:20px; height:20px; background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt18SOam3wUX0wExC6ji5-lY732vA2fEPBscikPQaLbT_tJd7Y7g') no-repeat 0 0; text-indent:-999em; background-size:20px 20px;}
+.dim {display:none; position:fixed; _position:absolute; top:0;left:0; background:#000; width:100%; height:100%; filter:Alpha(opacity=40); opacity:0.4; -moz-opacity:0.4; z-index:20;}
+    </style>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="jquery.bpopup-0.10.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/7f3a427fdf.js" crossorigin="anonymous"></script>
+    <script>
+         (function($) {
+           $(function() {
+               $('#my-img').bind('click', function(e) {
+           var self = $(this)
+           , content = $('.content'); 
+           $('element_to_pop_up').bPopup({
+               onOpen: function() {
+                   content.html(self.data('bpopup') || '');
+               },
+               onClose: function() {
+                   content.empty();
+               }
+           }); 
+                   e.preventDefault();
+                   $('#element_to_pop_up').bPopup();
+               });
+           });
+       })(jQuery);
+       
+       $(function(){
+  
+  var embed = $('#player'); //동영상 코드
+
+  $('.play').on('click', function(){ //레이어 열때
+      var path = $(this).attr('href');
+      $('.cont').append(embed);
+      $(path).show();
+      $('.dim').show();
+  })
+
+  $('.close').on('click', function(){ //레이어 닫을때
+      $(this).parents('#layer').hide();
+      $('.dim').hide();
+      $('.cont').empty();
+  })
+
+$('.dim').on('click', function(){
+  $(this).hide();
+  $('#layer').hide();
+  $('.cont').empty();
+})
+
+}); 
+        </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="navigation">
+                <img src="final/logo.png" alt="">
+                <ul>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Buy the Game</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="main">
+            <div class="store">
+                <img src="final/store.png" alt="">
+                <div class="store-text">
+                    <p> Available now on Xbox One, Nintendo Switch,
+                    <br>PS4, PS3, and PS VITA</p>
+                    <br><a href="#buy">Buy the Game</a>
+                </div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie-text">
+                <h2>Traliers</h2>
+            </div>
+            <div class="movie-tralier">
+                <div class="video">
+                    <img src="final/tralier1.jpg" alt="">
+                    <i class="fa-solid fa-circle-play" style="position: absolute; top: 40%; left: 50%;
+                    font-size: 50px; cursor: pointer;" id="my-img"></i>
+                    <div class="pop-up" id="element_to_pop_up">
+                        <a class="b-close"><i style="position: relative; left: 3px; bottom: 4px;"
+                            class="fa-solid fa-circle-xmark"></i></a>
+                        <iframe width="730" height="440" src="https://www.youtube.com/embed/VxuudDNydS4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    </div>
+                    <div class="video">
+                        <img src="final/tralier2.jpg"  alt="">
+                        <a href="#layer" class="play"><i class="fa-solid fa-circle-play" style="position: absolute; top: 33%; left: 43%;
+                            font-size: 50px; cursor: pointer; color: black;" ></i></a>
+                        <div id="layer">
+                            <div class="inner">
+                              <div class="cont">
+                                <iframe id="player" width="560" height="315" 
+                                src="https://www.youtube.com/embed/z73rg__tzIs"
+                                frameborder="0" allowfullscreen></iframe>
+                              </div>
+                              <a href="#none" class="close">close</a>
+                            </div>
+                          </div>
+                          <div class="dim">  
+                          </div>
+                        </div>
+            </div>
+        </div>
+        <div class="container-news">
+            <div class="news-header">
+                <h2>News</h2>         
+            </div>
+            <div class="news">
+                <div class="news-img">
+                    <img src="final/news.jpg" alt="">
+                </div>
+                <div class="news-text">
+                    <ul>
+                        <li>FINAL FANTASY X/X-2 HD Remaster brings the timeless classics forward to the current generation of fans, old and new alike.</li>
+                        <li>FINAL FANTASY X tells the story of a star blitzball player, Tidus, who journeys with a young and beautiful summoner named Yuna on her quest to save the world of Spira from an endless cycle of destruction wrought by the colossal menace Sin.</li>
+                        <li>FINAL FANTASY X-2 returns to the world of Spira two years after the beginning of the Eternal Calm. Having been shown a mysterious but familiar image in a sphere, Yuna becomes a Sphere Hunter and along with her companions Rikku and Paine, embarks on a quest around the world to find the answers to the mystery within.</li>
+                        <li>Fully immerse yourself in the World of Spira as you enjoy over 100 combined hours of gameplay across the two classic titles. FINAL FANTASY X/X-2 HD Remaster is available now on PlayStation®4, PlayStation®3, PlayStation®Vita and STEAM. Coming in 2019, the game will be available for Xbox One and Nintendo Switch.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-feature">
+            <div class="feature-header">
+                <h2>Feautres</h2>         
+            </div>
+            <div class="feature-body">
+                <div class="feature-item">
+                    <div class="item-head">
+                        <p>Enhanced HD Graphics</p>
+                </div>
+                <img src="final/feature-graphic.jpg" alt="">
+                <div class="item-body">
+                    <p>Heroes, villains, monsters, environments, and cutscenes have been given an HD facelift so you can enjoy these classic games with stunning updated graphics.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="item-head">
+                    <p>Classic or New Audio-Take your pick</p>
+                </div>
+                <img src="final/feature-audio.jpg" alt="">
+                <div class="item-body">
+                    <p>Tailor your gameplay and switch freely between the remastered & arranged, or the classic audio from the originals.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="item-head">
+                    <p>Over 100 Hours of Gameplay</p>
+                </div>
+                <img src="final/feature-gameplayjpg.jpg" alt="">
+                <div class="item-body">
+                    <p>Relive all of the battles and heartfelt moments for over 100 hours of combined gameplay.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="container-about">
+            <div class="about-header">
+                <h2>About</h2>         
+            </div>
+             <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="final/about-logo1.png" alt="">
+                <p>
+                  <br>Listen to my syory... this... may be our last chance.
+                </p>
+                <p>The world lies on the brink of destruction. Only a select few may be
+                    able to save it. 
+                </p>
+                <p>
+                In ages past, the world of Spira experienced a golden age of perfection,<br> brought
+                about by ans advanced civilization through the use of wondrous machinery called machina.
+                </p>
+                <p>However, around one thousand years before the present day, acolossal menace
+                    known only as <br>"Sin" appeared and sundered all before it. Though a line of summers
+                    have since brought Sin low <br> many times, it inevitably returns in an unending cycle of
+                    destruction. In the face of this ever-pervasive <br> threat,the people of Spira folcked
+                    the teachings of Yevon, which tell that Sin is a punishment <br>to those who relied overly on
+                    machina 
+                </p>
+                <p>Tidus is a young Blitzball star tht mysteriously finds himself in Spira after
+                    his home city of <br> Zanarkand is destroyed by Sin one thousand years in the
+                    past. Believing Sin to be the key to <br> returining home, Tidus joins a young summoner
+                    named Yuna on her pilgrimage to destoyry <br> Sin and bring about the Calm
+                </p>
+            </div>
+            <div class="swiper-slide">
+                <img src="final/about-logo2.png" alt="">
+                <p> <br> FINAL FANTSY X-2 returns to the world of Spira two years after the beginning of the 
+                    Eternal Calm. <br> Having been shown a mysyerious but familiar image in a sphere, Yuna
+                    becomes a sphere Hunter <br>and along with her companions Rikku and Paine, embarks on
+                    quest around the world to find the <br> answers to the mystery within
+                </p>
+            </div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+        </div>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      loop: true,
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    </script>
+        </div>
+        <div class="container-buy">
+            <div class="buy-header">
+                <h2>Buy the Game</h2>
+            </div>
+            <div class="language-selector">
+                <select name="" id="">
+                    <option value="#">United States</option>
+                    <option value="#">United Kingdom</option>
+                    <option value="#">France</option>
+                    <option value="#">Italy</option>
+                    <option value="#">Germany</option>
+                    <option value="#">Spain</option>
+                    <option value="#">Australia</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

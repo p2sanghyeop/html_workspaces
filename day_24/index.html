@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- padding은 auto가 안먹힘 -->
+    <!-- a태그는 text alin이 안먹혀서 옮길려면 div나 span으로 감싸줘야함 -->
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .popup{
+        width: 1000px;
+        height: 300px;
+        background-color: blue;
+        margin: 100px auto 0;
+        position: relative;
+    }
+    .close{
+        position: absolute; 
+        right: 0;
+        background-color: antiquewhite;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+    .container{
+        width: 500px;
+        height: 200px;
+        margin: 50px auto 0;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function closePopup(){
+            // 바닐라 js 문법
+            //document.getElementById("popup").style.display = "none";
+            $('#popup').hide();
+            //$("#popup").css("display","none")
+            //class이름이 container인 태그 안에 해당 태그를 추가해라!
+            $('.container').append('<button onclick="openPopup()">확인</button>')
+        }
+
+        function openPopup(){
+           //var style = document.getElementById("popup").style.display;
+            // A == B : A는 B와 같다
+            // A===B : A와 B는 같고 자료형도 같다
+            var style = $('#popup').css("display"); 
+            if(style === "none" ){
+                //document.getElementById("popup").style.display = "block";
+                //return true;
+                $("#popup").css("display","block")
+            }
+        }
+
+       
+    </script>
+    
+</head>
+<body>
+<div class="popup" id="popup">
+<div class="close" onclick="closePopup()"></div>
+</div>
+    <div class="container">
+        <!-- 컨텐츠 내용 작성 -->
+        <button onclick="openPopup()">확인</button>
+    </div>
+</body>
+</html>

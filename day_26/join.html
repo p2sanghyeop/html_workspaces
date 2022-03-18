@@ -91,7 +91,7 @@
       </div>
       <label for="gender">성별</label>
       <select name="gender" id="gender">
-        <option selected>성별</option>
+        <option value="N" selected>성별</option>
         <option value="M">남자</option>
         <option value="G">여자</option>
       </select>
@@ -153,13 +153,48 @@
         }
         else{
           console.log("그외")
+          alert("이름을 입력해주세요");
+          return 0;
         }
+        var yy = $("#yy").val().trim();
+      var dd = $("#dd").val().trim();
+      if(checknumber(yy) || checknumber(dd)){
+        console.log("생일")
       }
+      if(!checknumber(yy) || !checknumber(dd)){
+        alert("숫자만 입력해주시오");
+        return false;
+      }
+      //성별체크
+      var gender = $('#gender option:selected').val()
+       console.log(gender);
+       if(gender == "N"){
+         alert("성별을 선택해 주세요");
+         $("#gender").focus();
+         return false;
+       }
+       var result = confirm("회원가입 할래")
+       if(result){
+         console.log("가입성공")
+       }
+      }
+
+
+
+     
+     
+
       //정규표현식
       function checkName(name){
         var regex = /^[가-힣a-zA-Z]+$/ //정규표현식 함수(한글이름만 찾기)
         return regex.test(name); //정규표현식 체크
       }
+
+      function checknumber(num){
+        var regex = /^[0-9]+$/ 
+        return regex.test(num);
+      }
+   
     </script>
   </body>
 </html>

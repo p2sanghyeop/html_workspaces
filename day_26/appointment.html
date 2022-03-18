@@ -110,8 +110,13 @@
        }
        else{
          $('#appointment option:selected').hide();
+         $('#appointment').val("");
        }
-       
+       var result = confirm("예약하겠습니까")
+       if(result){
+         console.log('예약성공')
+       }
+
       }
       
     </script>

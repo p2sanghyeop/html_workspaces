@@ -22,7 +22,7 @@
           <input id="hiredate" type="text" placeholder="입사날짜를 입력하세요..."/>
         </div>
         <div class="btn-wrapper">
-          <button type="button">사원 등록</button>
+          <button type="button" onclick="enter()">사원 등록</button>
         </div>
       </div>
       <div class="section-table">
@@ -88,6 +88,39 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      function enter(){
+        var rank = $('#rank').val();
+        var name = $('#name').val();
+        var job = $('#job').val();
+        var loc = $('#loc').val();
+        var hiredate = $('#hiredate').val();
+        if(rank == ""){
+          alert("데이터 입력")
+          $('#rank').focus();
+          return flase;
+        }
+        else if(name == ""){
+          alert("데이터 입력")
+          $('#name').focus();
+          return flase;
+        }
+        else if(job == ""){
+          alert("데이터 입력")
+          $('#job').focus();
+          return flase;
+        }
+        else if(loc == ""){
+          alert("데이터 입력")
+          $('#loc').focus();
+          return flase;
+        }
+        else if(hiredate == ""){
+          alert("데이터 입력")
+          $('#hiredate').focus();
+          return flase;
+        }
+       
+        }
       // 소스 작성
       /* 
       1번 문제: 사원등록 버튼을 클릭 했을 때 랭킹 부터 입사날짜까지 빈공간이 있으면

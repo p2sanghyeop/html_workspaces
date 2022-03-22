@@ -19,9 +19,9 @@
 </head>
 <body>
     <div id="red" class="red">
-        <input type="text" value="아메리카노">
-        <select name="" id="">
-            <option value="none">--커피를 선택하시오--</option>
+        <input type="text" id="order" value="아메리카노">
+        <select name="" id="menu">
+            <option value="none" selected>--커피를 선택하시오--</option>
             <option value="americano">아메리카노</option>
             <option value="icetea">아이스티</option>
             <option value="latte">카페라떼</option>
@@ -41,7 +41,42 @@
            //attr은 속성이름을 호출할수도 있고, 값을 변경할수도 있다
            //attr(속성이름, 값)
            $('.red').attr('style','background-color: crimson;')
+
+           //input value를 가져와서 해당 option에 selected
+            var orderMenu = $('#order').val();
+             if(orderMenu === '아메리카노'){
+            //     //option:eq(1) : option 1번째 (option은 0부터 시작)
+            //     //attr('selected', 'selected') selected 속성에 selected값 넣기
+                $('#menu option:eq(1)').attr('selected', 'selected');
+             }
+            if(orderMenu === '아이스티'){
+                $('#menu option:eq(2)').attr('selected', 'selected');
+            }
+            if(orderMenu === '카페라떼'){
+                $('#menu option:eq(3)').attr('selected', 'selected');
+            }
         });
+        //keyup : 키보드에서 손을 땠을때 실행
+        //keydown : 키보드를 누렀을 때 실행
+        $('#order').on('keyup', function(key){//keyup 이벤트 발생 -> 익명함수 파라미터에 이벤트 json 넘겨줌
+            if(key.keyCode==13){ //enter는 13
+                //엔터눌렀을때 실행코드
+                var orderMenu = $('#order').val();
+             if(orderMenu === '아메리카노'){
+                $('#menu option:eq(1)').attr('selected', 'selected');
+             }
+            if(orderMenu === '아이스티'){
+                $('#menu option:eq(2)').attr('selected', 'selected');
+                $('#menu option:eq(1)').removeAttr('selected');
+                $('#menu option:eq(3)').removeAttr('selected');
+            }
+            if(orderMenu === '카페라떼'){
+                $('#menu option:eq(3)').attr('selected', 'selected');
+                $('#menu option:eq(1)').removeAttr('selected');
+                $('#menu option:eq(2)').removeAttr('selected');
+            }            
+            } 
+        })
     </script>
 </body>
 </html>

@@ -27,7 +27,7 @@
               <h6>참다랑어 뱃살</h6>
               <p>숙성 : <span>8일 숙성</span></p>
               <p>가격 : <span>22,000</span></p>
-              <a href="#">담기</a>
+              <a href="#" type="button" id="c1" value="22000" onclick="calc(this)">담기</a>
             </div>
           </div>
           <div class="menu">
@@ -36,7 +36,7 @@
               <h6>참다랑어 뱃살</h6>
               <p>숙성 : <span>2일 숙성</span></p>
               <p>가격 : <span>10,000</span></p>
-              <a href="#">담기</a>
+              <a href="#" id="c2" value="10000" onclick="calc(this)">담기</a>
             </div>
           </div>
           <div class="menu">
@@ -45,7 +45,7 @@
               <h6>참다랑어 등살</h6>
               <p>숙성 : <span>3일 숙성</span></p>
               <p>가격 : <span>12,000</span></p>
-              <a href="#">담기</a>
+              <a href="#" value="12000" onclick="calc(this)">담기</a>
             </div>
           </div>
           <div class="menu">
@@ -54,24 +54,24 @@
               <h6>참다랑어 뱃살</h6>
               <p>숙성 : <span>5일 숙성</span></p>
               <p>가격 : <span>16,000</span></p>
-              <a href="#">담기</a>
+              <a href="#" value="16000" onclick="calc(this)">담기</a>
             </div>
           </div>
-          <div class="menu">
+          <div class="menu" >
             <img src="image/img_con06.jpg" />
-            <div class="menu-info">
+            <div class="menu-info" >
               <h6>참다랑어 스페셜 세트</h6>
               <p>숙성 : <span>5일 숙성</span></p>
               <p>가격 : <span>32,000</span></p>
-              <a href="#" style="color: red">품절</a>
+              <a href="#" value="16000" onclick="calc(this)" style="color: red">품절</a>
             </div>
           </div>
         </div>
       </div>
       <div class="footer">
         <div class="order">
-          <button type="button">결제하기</button>
-          <p>총 주문 금액 : <span>0</span></p>
+          <button type="button" onclick="pay()">결제하기</button>
+          <p>총 주문 금액 : <span id="sumtext" value="">0</span></p>
         </div>
       </div>
     </div>
@@ -81,21 +81,30 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      $(".nav").on("click",function(){
-          var nav1 = $('#all').val();
-          var nav2 = $('#today').val();
-          var nav3 = $('#best').val();
-          var array = new Array();
-          array.push(nav1);
-          array.push(nav2);
-          array.push(nav3);
-          for(var i=0; i<array.length; ++i){
-            if(array[i] === '전체 메뉴'){
-              $('#all').attr('style','background-color: #ffffff')
-              
-            }
-          }
-        });
+    $(".nav li").on("click", function () {
+    $(".nav li").css('color', '#fff'), $(".nav li").css('background-color', '#c24040');
+    $(this).css('color', '#4e4e4e'), $(this).css('background-color', '#ffffff');
+    });    
+    
+    var sum = 0;
+    
+    function calc(button) {
+	
+	  if(button)
+		sum+= parseInt(button.value);	
+	  else
+		sum-= a.value;
+	  document.getElementById("sumtext").value = sum;
+    }
+
+
+    function  pay(){
+        var order = $('.order').val()
+       if(order == ""){
+         alert("메뉴를 선택해 주세요");
+         return false;
+       }
+      }
       //소스 구현
       /*
       1번 문제: 전체 메뉴, 오늘의 메뉴, 베스트 메뉴를 클릭하게 되면

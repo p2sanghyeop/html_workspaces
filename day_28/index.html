@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li id="boxing">복싱</li>
+            <li><p>수영</p></li>
+            <li>유도</li>
+            <li>헬스</li>
+            <li>레슬링</li>
+        </ul>
+        <ul></ul>
+        <div>사격</div>
+        <div class="text-wrapper">
+            <input id="userName" type="text" value="박카스">
+            <input id="userEmail" type="text" value="박카스@gmail.com">
+        </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        var containerChildren = $('.container').children();
+        var container = $('.container').children();
+        //아래3개는 동일함
+        console.log(containerChildren)
+        console.log($('.container').children())
+        console.log(container.children())
+        //복싱 찾기
+        console.log(containerChildren[0].children[0].innerHTML);
+        console.log($('.container').children()[0].children[0].innerHTML);
+        //복싱 id 찾기
+        console.log($('.container').children()[0].children[0].id);
+        //li태그 for문으로 찾기
+       var len = containerChildren[0].children.length;
+       //innerText : text만 보여줌
+       //innerHtml : html태그와 text를 보여줌
+        for(var i=0; i<len; ++i){
+            var innerText = containerChildren[0].children[i].innerHTML;
+            console.log(innerText)
+        }
+        console.log(containerChildren[2].innerHTML);
+      
+        console.log($('.container').children()[2].innerHTML);
+
+        //for문 이용해서 input id와 value console.log 프린트
+       var len2 = containerChildren[3].children.length;
+        for(var i=0; i<len2; ++i){
+            var vakasid = containerChildren[3].children[i].id;
+            var vakvalue = containerChildren[3].children[i].value;
+            console.log(vakasid)
+            console.log(vakvalue)
+        }
+        var len3 = ($('.container').children()[3].children.length)
+        for(var i=0; i<len3; ++i){
+            var vakasid1 = containerChildren[3].children[i].id;
+            var vakvalue2 = containerChildren[3].children[i].value;
+            console.log(vakasid1)
+            console.log(vakvalue2)
+        }
+        //1
+        var textWrapper = $('.text-wrapper').children();
+        for(var i=0; i<textWrapper.length; ++i){
+            console.log(textWrapper[i].id);
+            //1 value 찾기
+            console.log(textWrapper[i].value);
+            //2 value 찾기
+            console.log($('#'+textWrapper[0].id).val());
+            console.log($('#userName').val());
+            var x = 'userName'
+            console.log($('#'+x).val());
+        }
+    </script>
+</body>
+</html>

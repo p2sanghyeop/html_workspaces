@@ -119,7 +119,22 @@
           $('#hiredate').focus();
           return flase;
         }
-       
+        var array = ['New York','San Francisco','London']
+        for(var i=0; i<array.length; ++i){
+          if( loc === array[0]){
+            return 0;
+          }
+          if( loc === array[1]){
+            return 0;
+          }
+          if( loc === array[2]){
+            return 0;
+          }
+          alert("데이터입력")
+          $('#loc').focus();
+          return 0;
+        }
+        
         }
       // 소스 작성
       /* 

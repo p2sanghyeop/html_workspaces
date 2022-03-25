@@ -26,8 +26,8 @@
             <div class="menu-info">
               <h6>참다랑어 뱃살</h6>
               <p>숙성 : <span>8일 숙성</span></p>
-              <p>가격 : <span>22,000</span></p>
-              <a href="#">담기</a>
+              <p>가격 : <span class="item">22,000</span></p>
+              <a href="#" id="list-1">담기</a>
             </div>
           </div>
           <div class="menu">
@@ -35,8 +35,8 @@
             <div class="menu-info">
               <h6>참다랑어 뱃살</h6>
               <p>숙성 : <span>2일 숙성</span></p>
-              <p>가격 : <span>10,000</span></p>
-              <a href="#">담기</a>
+              <p>가격 : <span class="item">10,000</span></p>
+              <a href="#" id="list-2">담기</a>
             </div>
           </div>
           <div class="menu">
@@ -44,8 +44,8 @@
             <div class="menu-info">
               <h6>참다랑어 등살</h6>
               <p>숙성 : <span>3일 숙성</span></p>
-              <p>가격 : <span>12,000</span></p>
-              <a href="#">담기</a>
+              <p>가격 : <span class="item">12,000</span></p>
+              <a href="#" id="list-3">담기</a>
             </div>
           </div>
           <div class="menu">
@@ -53,8 +53,8 @@
             <div class="menu-info">
               <h6>참다랑어 뱃살</h6>
               <p>숙성 : <span>5일 숙성</span></p>
-              <p>가격 : <span>16,000</span></p>
-              <a href="#">담기</a>
+              <p>가격 : <span class="item">16,000</span></p>
+              <a href="#" id="list-4">담기</a>
             </div>
           </div>
           <div class="menu" >
@@ -62,8 +62,8 @@
             <div class="menu-info" >
               <h6>참다랑어 스페셜 세트</h6>
               <p>숙성 : <span>5일 숙성</span></p>
-              <p>가격 : <span>32,000</span></p>
-              <a href="#" style="color: red">품절</a>
+              <p>가격 : <span class="item">32,000</span></p>
+              <a href="#" id="list-5" style="color: red">품절</a>
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@
       <div class="footer">
         <div class="order">
           <button type="button" onclick="pay()">결제하기</button>
-          <p>총 주문 금액 : <span id="sumtext" value="">0</span></p>
+          <p>총 주문 금액 : <span id="sumList">0</span></p>
         </div>
       </div>
     </div>
@@ -86,26 +86,70 @@
     $(this).css('color', '#4e4e4e'), $(this).css('background-color', '#ffffff');
     });    
     
-    var sum = 0;
-    
-    function calc(val) {
-	
-	  $('.list').on('click'),function(){
-      var count = $(this).attr('href');
-      sum += this.value;	
-      console.log(sum)
-    }
-    document.getElementById("sumtext").value = sum;
-  }
-
     console.log($('.menu-info').children());
+   var total = parseInt($('#sumList')[0].innerText)
+    var len = '.menu-info'.length
+    var cart = 0
+  
+    $('#list-1').on('click',function(){
+     $('#sumList')[0].innerText = $('.item')[0].innerText.replace(',','')
+          cart += parseInt($('#sumList')[0].innerText)
+          $('#sumList')[0].innerText = cart + total
+   })
+   $('#list-2').on('click',function(){
+    $('#sumList')[0].innerText = $('.item')[1].innerText.replace(',','')
+         cart += parseInt($('#sumList')[0].innerText)
+         $('#sumList')[0].innerText = cart + total
+   })
+   $('#list-3').on('click',function(){
+    $('#sumList')[0].innerText = $('.item')[2].innerText.replace(',','')
+          cart += parseInt($('#sumList')[0].innerText)
+          $('#sumList')[0].innerText = cart + total
+   })
+   $('#list-4').on('click',function(){
+    $('#sumList')[0].innerText = $('.item')[3].innerText.replace(',','')
+          cart += parseInt($('#sumList')[0].innerText)
+          $('#sumList')[0].innerText = cart + total
+   })
+  
+  console.log($('#sumList')[0].innerText.length)
+  var len2 =$('#sumList')[0].innerText.length
     function  pay(){
-        var order = $('.order').val()
-       if(order == ""){
-         alert("메뉴를 선택해 주세요");
-         return false;
-       }
+      for(var i=0; i<len2; ++i){
+        if($('#sumList')[0].innerText == 0){
+          alert("메뉴를 선택해 주세요");
+          return 0;
+        }
+        if($('#sumList')[0].innerText.length > 5){ 
+          alert('금액을 초과하였습니다')
+          return 0;
+        }
       }
+     
+     
+    }
+    $('#list-5').on('click',function(){
+          alert('참다랑어 세트는 품절')
+          return false
+        })
+        $('.menu a').on('click',function(){
+        if($('#sumList')[0].innerText > 90000){
+          $('#list-1').off('click')
+        }
+        if($('#sumList')[0].innerText > 10000){
+          $('#list-2').off('click')
+        }
+        if($('#sumList')[0].innerText >10000){
+          $('#list-3').off('click')
+        }
+        if($('#sumList')[0].innerText >10000){
+          $('#list-4').off('click')
+        }
+        if($('#sumList')[0].innerText >10000){
+          $('#list-5').off('click')
+        }
+        
+      })
       //소스 구현
       /*
       1번 문제: 전체 메뉴, 오늘의 메뉴, 베스트 메뉴를 클릭하게 되면

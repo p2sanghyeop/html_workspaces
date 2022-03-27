@@ -133,22 +133,18 @@
           return false
         })
         $('.menu a').on('click',function(){
-        if($('#sumList')[0].innerText > 90000){
+        if($('#sumList')[0].innerText > 80000){
           $('#list-1').off('click')
         }
-        if($('#sumList')[0].innerText > 10000){
+        if($('#sumList')[0].innerText > 90000){
           $('#list-2').off('click')
         }
-        if($('#sumList')[0].innerText >10000){
+        if($('#sumList')[0].innerText > 84000){
           $('#list-3').off('click')
         }
-        if($('#sumList')[0].innerText >10000){
+        if($('#sumList')[0].innerText > 80000){
           $('#list-4').off('click')
-        }
-        if($('#sumList')[0].innerText >10000){
-          $('#list-5').off('click')
-        }
-        
+        }     
       })
       //소스 구현
       /*

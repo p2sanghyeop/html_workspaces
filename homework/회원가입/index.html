@@ -28,9 +28,9 @@
           type="text" id="number"
           placeholder="연락처를 입력해주세요...(번호만 입력하세요)"
         />
-        <div class="question-box">
+        <div class="question-box" >
           <span>회원가입에 동의하나요?</span>
-          <input type="checkbox" />
+          <input id="question-box" type="checkbox" />
         </div>
         <div class="join-btn">
           <button type="button" id="btn">회원 가입</button>
@@ -47,11 +47,12 @@
     var userName = $("#name").val()
     var userNickName = $("#nickName").val()
     var userEmail = $("#email").val()
+    var userEmailList = $("#emailList").val()
     var userNumber = $("#number").val().replace("-","").replace("-","")
     console.log($(".form-wrapper").children())  
     var len = $(".form-wrapper").children().length
     for(var i=0; i<len; ++i){
-      if(userName === "" && !CheckName(value)){
+      if(userName === "" || !CheckName(userName)){
         alert('이름입력')
         console.log('한글입력')
         $("#name").focus();
@@ -61,7 +62,7 @@
         alert('길이초과')
         return 0;
       }
-      if(userNickName === "" && !CheckNickName(value)){
+      if(userNickName === "" || !CheckNickName(userNickName)){
         alert('닉네임 입력')
         console.log('한글입력')
         $("#nickName").focus();
@@ -76,11 +77,21 @@
         $("#email").focus();
         return 0;
       }
+      if(userEmailList === 'none'){
+        alert('이메일 리스트를 선택')
+        return 0;
+      }
       if(userNumber === ""){
         alert('핸드폰 번호 입력')
         $("#mumber").focus();
         return 0;
       }
+      if ($('#question-box').is(":checked")===false){ 
+        alert("체크박스 확인");
+         $("#question-box").focus();
+          return 0; 
+        }
+      console.log(submitData)
     }
   })
 
@@ -96,6 +107,15 @@
     var regNickName = /^[가-힣]+$/; 
     var isNickName = regNickName.test(nickName);
     return isNickName
+  }
+  
+  function submitData(data){
+    var jsonData= {};
+    jsonData.userName =  $("#name").val();
+    jsonData.userNickName = $("#nickName").val();
+    jsonData.userEmail = $("#email").val();
+    jsonData.userNumber = $("#number").val().replace("-","").replace("-","");
+    console.log(jsonData);
   }
    
       /* 문제 1. 

@@ -30,7 +30,7 @@
         />
         <div class="question-box" >
           <span>회원가입에 동의하나요?</span>
-          <input id="question-box" type="checkbox" />
+          <input id="isAgree" type="checkbox" />
         </div>
         <div class="join-btn">
           <button type="button" id="btn">회원 가입</button>
@@ -86,9 +86,9 @@
         $("#number").focus();
         return 0;
       }
-      if ($('#question-box').is(":checked")===false){ 
+      if ($('#isAgree').is(":checked")===false){ 
         alert("체크박스 확인");
-         $("#question-box").focus();
+         $("#isAgree").focus();
           return 0; 
         }
       console.log(submitData)

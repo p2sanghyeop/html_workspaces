@@ -47,7 +47,7 @@
     var userName = $("#name").val()
     var userNickName = $("#nickName").val()
     var userEmail = $("#email").val()
-    var userEmailList =$('#emailList option:selected').val()
+    var userEmailList = $('#emailList option:selected').val()
     var userNumber = $("#number").val().replace("-","").replace("-","")
     console.log($(".form-wrapper").children())  
     var len = $(".form-wrapper").children().length
@@ -95,7 +95,7 @@
     var jsonData= {};
     jsonData.userName =  userName;
     jsonData.userNickName = userNickName;
-    jsonData.userEmail = userEmail;
+    jsonData.userEmail = userEmail+'@'+userEmailList+'.com';
     jsonData.userNumber = userNumber;
     console.log(jsonData);
   })

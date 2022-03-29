@@ -44,10 +44,55 @@
     ></script>
     <script>
    $('#btn').click(function(){
+    var formWrapper = $('.form-wrapper').children();
+    var jsonParm = {}
+    //jsonParm.phone = '010'
+    //var elementID = 'phone'
+    //jsonParm[elementID] = '010'
+    for(var i=1; i<formWrapper.length; ++i){
+        var elementID = formWrapper[i].id
+        var elementValue = ""
+        if(formWrapper[i].nodeName ==='INPUT'){
+            elementValue = $('#'+elementID).val();
+        if(elementValue === ''){
+            alert('내용확인')
+            $('#'+elementID).focus();
+            return 0;
+        }
+        if((formWrapper[i].id ==='name' || formWrapper[i].id==='nickName')
+        && elementValue.length>=20){
+            return 0;
+        }
+        if((formWrapper[i].id === ''))
+        if(userEmail === ""){
+        alert('이메일 입력')
+        $("#email").focus();
+        return 0;
+      }
+      if(userEmailList === 'none'){
+        alert('이메일 리스트를 선택')
+        return 0;
+      }
+      if(userNumber === ""){
+        alert('핸드폰 번호 입력')
+        $("#number").focus();
+        return 0;
+      }
+      if ($('#isAgree').is(":checked")===false){ 
+        alert("체크박스 확인");
+         $("#isAgree").focus();
+          return 0; 
+        }
+        }
+        jsonParm[elementID]=elementValue
+    }
+    function doJoin(parma){
+        console.log(parma);
+    }    
     var userName = $("#name").val()
     var userNickName = $("#nickName").val()
     var userEmail = $("#email").val()
-    var userEmailList =$('#emailList option:selected').val()
+    var userEmailList = $("#emailList").val()
     var userNumber = $("#number").val().replace("-","").replace("-","")
     console.log($(".form-wrapper").children())  
     var len = $(".form-wrapper").children().length
@@ -91,13 +136,8 @@
          $("#isAgree").focus();
           return 0; 
         }
+      console.log(submitData)
     }
-    var jsonData= {};
-    jsonData.userName =  userName;
-    jsonData.userNickName = userNickName;
-    jsonData.userEmail = userEmail;
-    jsonData.userNumber = userNumber;
-    console.log(jsonData);
   })
 
 
@@ -114,7 +154,14 @@
     return isNickName
   }
   
-  
+  function submitData(data){
+    var jsonData= {};
+    jsonData.userName =  $("#name").val();
+    jsonData.userNickName = $("#nickName").val();
+    jsonData.userEmail = $("#email").val();
+    jsonData.userNumber = $("#number").val().replace("-","").replace("-","");
+    console.log(jsonData);
+  }
    
       /* 문제 1. 
         회원가입 버튼 눌렀을 때, 빈칸 혹은 체크하지 못한 부분이 있다면

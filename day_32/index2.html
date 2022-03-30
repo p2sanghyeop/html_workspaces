@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <input id="reservationDate" type="date">
+        <select id="menu">
+            <option value="null">메뉴선택</option>
+            <option value="don">돈가스</option>
+            <option value="kal">칼국수</option>
+            <option value="gno">뇨끼</option>
+            <option value="kim">김치볶음밥</option>
+        </select>
+        <button id="btn" type="button">음식주문</button>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+    ></script>
+    <script>
+        $('#btn').click(function(){
+          var selectMenu =  $('#menu option:selected').val();
+          if(selectMenu === 'null'){
+              alert('메뉴선택')
+              return 0;
+          }
+          var selectedDate = $('#reservationDate').val()
+          var choice = new Date()
+          console.log(selectedDate)
+          console.log(choice.getTime())
+          var reselectedDate = new Date(selectedDate)
+          console.log(reselectedDate.getTime())
+          var diffday = (choice.getTime()-reselectedDate.getTime())/(1000*60*60*24)
+          console.log(diffday)
+          if(diffday>=1){
+              alert('예약불가')
+              return 0;
+            }
+            else{
+                alert('예약가능')
+                return 0;
+            }
+        var jsonData = {}
+          jsonData.selectedDate = selectedDate
+        })
+        function dosubmit(jsonData){
+        console.log(jsonData)
+    }
+    </script>
+</body>
+</html>

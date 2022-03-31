@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+    border-collapse: collapse;
+    margin: auto;
+    padding: 30px;
+}
+
+thead {
+    border-collapse: separate;
+    box-shadow: 0 1px 5px grey;
+    border: 1px solid #444444;
+}
+
+th {
+    border: 2px solid blanchedalmond;
+    letter-spacing: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-align: center;
+}
+tbody {
+    border-collapse: separate;
+}
+
+td {
+    border: 2px solid blanchedalmond;
+    text-align: center;
+}
+</style>
+<body>
+    <div class="my-github">
+        <h3 class="name"></h3>
+        <p class="followers"></p>
+        <p class="following"></p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>visibility</th>
+                <th>created_at</th>
+            </tr>
+        </thead>
+        <tbody id="list">
+                <!-- <tr>    
+                <td>123</td>
+                <td>아이폰13</td>
+                <td>10</td>
+                <td>2022-03-30</td>
+                <td>홍길종</td>
+            </tr>-->
+        </tbody>
+    </table>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+    ></script>
+    <script>
+        //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
+    $.ajax({//ajax 선언
+        url : 'https://api.github.com/users/p2sanghyeop',
+        type : 'GET', //데이터조회
+        dataType : 'json', //API 서버에서 오는 데이터 타입 정의
+        headers :  {Authorization : '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'},
+        success : function(data) {
+            console.log(data)
+            console.log(data.followers)
+            console.log(data.following)
+            $('.name').append(data.name)
+            $('.followers').append(data.followers)
+            $('.following').append(data.following)
+        },
+        error : function(request, status, error){
+            console.log(error)
+        },
+    })
+
+    $.ajax({
+        url : 'https://api.github.com/users/p2sanghyeop/repos',
+        type : 'GET',
+        dataType : 'json',
+       // headers :  {Authorization : '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'},
+        success : function(data){
+            console.log(data)
+            for(var i=0; i<data.length; ++i){
+                var html = '<tr><td>'+data[i].id+'</td><td>'+data[i].name+'</td><td>'+data[i].visibility+'</td><td>'+data[i].created_at+'</td></tr>'
+                $('#list').append(html)
+            }
+        },
+        error : function(reuqest, status, error){
+            console.log(error)
+        },
+    })
+    
+    var sum = 0
+    var jsonData3 =[{sal:3000, id:3}, {sal:5000, id:1}, {sal:4400, id:1},{sal:2300, id:3},];
+    console.log(jsonData3)
+    for(var i=0; i<jsonData3.length; ++i){
+        if(jsonData3[i].id===1){
+            sum += jsonData3[i].sal
+        }
+    }
+    console.log(sum)
+    </script>
+</body>
+</html>

@@ -17,7 +17,7 @@ SELECT * FROM restaurant WHERE foodNo = 30 AND restaurantName= '빠스타스';
 레스토랑 테이블에 데이터가 일일 1000만건 저장된다. 
 레스토랑 테이블에서 위에 작성한 select쿼리 호출 시간이 오래 걸리기 시작했다.
 가장 먼저해야하는 바람직한 행동은?
-답안 작성 =>
+답안 작성 => food no 에 index를 걸어 호출 속도를 높인다
 */
 
 DELETE FROM food
@@ -26,5 +26,5 @@ WHERE foodNo = 30;
 음식 테이블에 30번 음식 데이터를 지우려고 한다.
 하지만 레스토랑 테이블에 30번 데이터가 있어서 지울 수가 없다. 
 음식 테이블에 30번 데이터를 지울 방법은 무엇일까?
-답안 작성 =>
+답안 작성 => on delete case cade
 */

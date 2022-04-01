@@ -70,7 +70,6 @@ td {
         url : 'https://api.github.com/users/p2sanghyeop',
         type : 'GET', //데이터조회
         dataType : 'json', //API 서버에서 오는 데이터 타입 정의
-        headers :  {Authorization : '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'},
         success : function(data) {
             console.log(data)
             console.log(data.followers)
@@ -88,7 +87,6 @@ td {
         url : 'https://api.github.com/users/p2sanghyeop/repos',
         type : 'GET',
         dataType : 'json',
-       // headers :  {Authorization : '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'},
         success : function(data){
             console.log(data)
             for(var i=0; i<data.length; ++i){

@@ -80,8 +80,6 @@
          
       var temp = [];
     for(var i=0; i<movies.length; ++i){
-      //  var mov = movies[i].createdAt
-      //  mov = new Date(mov)
        for(var j=0; j<movies.length-1; ++j){
          if(movies[i].createdAt<movies[j].createdAt){
            temp = movies[i].createdAt
@@ -89,9 +87,21 @@
            movies[j].createdAt = temp
           }
         }
-        //  console.log(mov.getTime())
         console.log(movies[i])
       }
+      
+      var max = 0 
+      var result = 0
+      for(var i=0; i<movies.length; ++i){
+        var mov = new Date(movies[i].createdAt)
+        var time = mov.getTime()
+        if(max<time)
+        max=time
+        result=i
+      }
+      console.log(movies[result].name)
+      console.log(movies[result].createdAt)
+      console.log(movies[result].rank)
       
       /*
       우리나라에서 개봉한 역대 관객수 TOP5영화 데이터를 조회했다고 가정.

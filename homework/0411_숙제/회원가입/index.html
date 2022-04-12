@@ -52,14 +52,16 @@
             var id = $("#id").val()
             var pswd1 = $("#pswd1").val()
             var pswd2 = $("#pswd2").val()
+            var isLogin = 0
             if(id ===''){
             alert('필수 입력란입니다. 입력해주세요.')     
             $("#id").focus();
             return 0;
             }
-            if(id !== isCheckId(id)){
-                alert('아이디는 5~20자의 영문 소문자, 숫자만 사용 가능합니다.')
-                 $("#id").focus();
+            if(!doCheckId(id)){
+            console.log('id 다름')
+            alert('아이디는 5~20자의 영문 소문자, 숫자만 사용 가능합니다.')
+             $("#id").focus();
                 return 0;
             }
             if(pswd1 === ''){
@@ -68,16 +70,22 @@
                 return 0;
             }
             if(pswd1 !== pswd2){
-                alert('비밀번호가 같아야 합니다.')
-                return 0;                
+                alert('비밀번호가 같지 않습니다')
+                return 0;
             }
-            confirm('회원가입 완료')
+            if(pswd1 === pswd2){
+               isLogin = true
+            }
+            if(isLogin){
+                alert('회원가입 완료')
+            }
+            
         })
 
-        function isCheckId(id){
-           var reg=/^[a-z0-9]*$/
-           var isIdcheck = reg.test(id);
-           return isIdcheck;
+        function doCheckId(id){
+           var regId= /^[a-z0-9]*$/
+           var isCheckId = regId.test(id);
+           return isCheckId;
        }
         /* 
           ** 문제를 풀 때 규칙을 먼저 찾아야 합니다. **

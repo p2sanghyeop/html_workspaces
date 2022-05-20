@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            text-align: center;
+            margin: 5% auto;
+            width: 500px;
+            height: auto;
+            text-align: center;
+            background-color: cornflowerblue;
+        }
+        p{
+            font-size: 25px;
+        }
+        .name{
+            padding-top: 15px;
+            padding-bottom: 20px;
+        }
+        .name input{
+            margin-top: 10px;
+        }
+        .nubmer{
+            padding-bottom: 30px;
+        }
+        .nubmer input{
+            margin-top: 15px;
+        }
+        .romm{
+            margin-bottom: 15px;
+        }
+        .piciture{
+            display: flex;
+        }
+        .count{
+            display: flex;
+            position: relative;
+            left: 43%;
+            font-size: 20px;
+        }
+        .count input[type="button"]{
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .check{
+            display: flex;
+            position: relative;
+            left: 25%;
+            padding-top: 15px;;
+        }
+        .check input[type="date"]{
+            margin-top: 15px;
+            margin-right: 15px;
+            margin-bottom: 20px;
+            width: 120px;
+            height: 30px;
+        }
+        .butn button{
+            margin-top: 15px;
+            font-size: 15px;
+            margin-bottom: 20px;
+            width: 120px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="name">
+            <p>성명</p>
+            <input type="text">
+        </div>
+        <div class="nubmer">
+            <p>전화번호</p>
+            <input type="text">
+        </div>
+        <div class="romm">
+            <p>객실</p>
+            <p>객실번호</p>
+            <input type="text">
+        </div>
+        <div class="picture">
+            <p>예약가능</p>
+            <img src="88aefa3f7211493b89873ca7b803d0cb.jpg" alt=""> <p>기준6명, 최대6명</p>
+        </div>
+        <div class="count">
+            <input type='button'onclick='count("minus")'value='-'/>
+            <div id='result'>1</div>
+            <input type='button' onclick='count("plus")' value='+'/>
+        </div>
+        <div class="check">
+            <div class="checkin">
+                <p>입실</p>
+                <input type="date">
+            </div>
+            <div class="checkout">
+                <p>퇴실</p>
+                <input type="date">
+            </div>     
+        </div>
+        <div class="catch">
+            <p>단가</p>
+            <input type="text">
+            <p>총금액</p>
+            <input type="text">
+        </div>
+
+        <div class="butn">
+            <button>예약하기</button>
+        </div>
+    </div>
+</body>
+<script>
+
+    function count(type)  {
+  // 결과를 표시할 element
+  const resultElement = document.getElementById('result');
+  
+  // 현재 화면에 표시된 값
+  let number = resultElement.innerText;
+  
+  // 더하기/빼기
+  if(type === 'plus') {
+    number = parseInt(number) + 1;
+    if(number ==7){
+        return 0;
+    }
+  }else if(type === 'minus')  {
+    number = parseInt(number) - 1;
+    if(number == 0){
+        return 0;
+    }
+  }
+  
+  // 결과 출력
+  resultElement.innerText = number;
+}
+</script>
+</html>

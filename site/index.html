@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: 5% auto;
+            width: 35%;
+            height: auto;
+            background-color: aquamarine;
+            text-align: center;
+        }
+        .container h1{
+            padding-bottom: 30px;
+        }
+        p{
+            text-align: left;
+            position: relative;
+            left: 12%;
+        }
+        .id p{
+            margin-top: 20px;
+            font-size: 25px
+        }
+        .id input{
+            margin-top: 20px;
+            width: 500px;
+            padding: 5px;
+            font-size: 20px;
+        }
+        .password p{
+            font-size: 25px;
+            margin-top: 20px;
+        }
+        .password input{
+            margin-top: 20px;
+            width: 500px;
+            padding: 5px;
+            font-size: 20px;
+        }
+        .name p{
+            font-size: 25px;
+            margin-top: 20px;
+        }
+        .name input{
+            margin-top: 20px;
+            width: 500px;
+            padding: 5px;
+            font-size: 20px;
+        }
+        .sex input[type="checkbox"]{
+            margin-left: 30px;
+            width: 30px;
+            height: 30px;
+        }     
+        .sex{
+            position: relative;
+            left: 12%;
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            font-size: 25px;
+        }
+        .number p{
+            font-size: 25px;
+            margin-top: 20px;
+        }
+        .number input{
+            margin-top: 20px;
+            width: 150px;
+            margin-left: 25px;
+            padding: 5px;
+            font-size: 20px;
+        }
+        .email p{
+            font-size: 25px;
+            margin-top: 20px;
+        }
+        .email input{
+            padding: 5px;
+            font-size: 20px;
+            width: 250px;
+        }
+        .email select{
+            margin-top: 20px;
+            padding: 5px;
+            font-size: 20px;
+            width: 250px;
+        }
+        .butn button{
+            margin-top: 20px;
+            width: 25%;
+            padding: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>회원가입</h1>
+        <div class="id">
+            <p>아이디</p>
+            <input type="text" placeholder="아이디">
+        </div>
+        <div class="password">
+             <p>비밀번호</p>
+            <input type="text" placeholder="비밀번호">
+        </div>
+        <div class="name">
+            <p>이름</p>
+            <input type="text" placeholder="이름">
+        </div>
+        <div class="sex">
+            <div class="sexcomment">
+                <p>성별</p>
+            </div>
+            <input type="checkbox"> 남 <input type="checkbox"> 여
+        </div>
+        <div class="number">
+            <p>전화번호</p>
+            <input type="tel" placeholder="전호번호 앞자리"><input type="tel" placeholder="전화번호 중간"><input type="tel" placeholder="전화번호 뒷자리">
+        </div>
+        <div class="email">
+            <p>이메일</p>
+            <input type="text" placeholder="이메일">
+            <select name="" id="">
+                <option value="">---메일을 선택해주세요---</option>
+                <option value="naver">naver.com</option>
+                <option value="gmail">gmail.com</option>
+                <option value="duem">duem.net</option>
+            </select>
+        </div>
+        <div class="butn">
+            <button>가입하기</button>
+        </div>
+    </div>
+</body>
+</html>
